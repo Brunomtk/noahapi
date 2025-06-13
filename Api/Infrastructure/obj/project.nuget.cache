@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fvO1p9V/aAk=",
+  "dgSpecHash": "/uBjJUq0mlc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruno\\.nuget\\packages\\bblanchon.pdfium.linux\\128.0.6569\\bblanchon.pdfium.linux.128.0.6569.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\bblanchon.pdfium.macos\\128.0.6569\\bblanchon.pdfium.macos.128.0.6569.nupkg.sha512",

@@ -1,4 +1,5 @@
-﻿using Core.Models;
+﻿using Core.DTO.Teams;
+using Core.Models;
 using Infrastructure.ServiceExtension;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -47,8 +48,20 @@ namespace ControlApi.Controllers
         /// Cria um novo time.
         /// </summary>
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Team team)
+        public async Task<IActionResult> Create([FromBody] CreateTeamDTO dto)
         {
+            var team = new Team
+            {
+                Name = dto.Name,
+                LeaderId = dto.LeaderId,
+                Region = dto.Region,
+                Description = dto.Description,
+                CompanyId = dto.CompanyId,
+                Status = Core.Enums.StatusEnum.Active,
+                Rating = 0,
+                CompletedServices = 0,
+            };
+
             var created = await _teamService.CreateAsync(team);
             return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
         }
