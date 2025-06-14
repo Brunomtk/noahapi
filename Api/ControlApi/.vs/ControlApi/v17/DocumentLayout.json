@@ -3,159 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\controlapi\\controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|solutionrelative:controllers\\teamcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Migrations\\20250614000606_Appoiments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\dto\\teams\\createteamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A2BE95A-38B3-4E5C-97CD-B16FC52486C3}|..\\Infrastructure\\Infrastructure.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\infrastructure\\dbcontextclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\enums\\appointmenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\enums\\appointmentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Migrations\\20250613235801_Appoiments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A2BE95A-38B3-4E5C-97CD-B16FC52486C3}|..\\Infrastructure\\Infrastructure.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\infrastructure\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\controlapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A2BE95A-38B3-4E5C-97CD-B16FC52486C3}|..\\Infrastructure\\Infrastructure.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\infrastructure\\dbcontextclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A2BE95A-38B3-4E5C-97CD-B16FC52486C3}|..\\Infrastructure\\Infrastructure.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\infrastructure\\serviceextension\\serviceextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A2BE95A-38B3-4E5C-97CD-B16FC52486C3}|..\\Infrastructure\\Infrastructure.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\infrastructure\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A2BE95A-38B3-4E5C-97CD-B16FC52486C3}|..\\Infrastructure\\Infrastructure.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\infrastructure\\serviceextension\\queryextesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\enums\\teamstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\enums\\statusenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\dto\\teams\\updateteamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\dto\\teams\\upcomingservicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\dto\\teams\\teamperformancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\dto\\teams\\teampageddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\dto\\teams\\teammemberdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\dto\\teams\\teamdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A2BE95A-38B3-4E5C-97CD-B16FC52486C3}|..\\Infrastructure\\Infrastructure.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\infrastructure\\repositories\\teamrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\models\\team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\controlapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\controlapi\\controllers\\leadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|solutionrelative:controllers\\leadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\controlapi\\controllers\\plansubscriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{71A6AF3F-6B94-48DA-AAED-D1A5D36C8E02}|ControlApi.csproj|solutionrelative:controllers\\plansubscriptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\CreateLeaderRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\PlanRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\DbContextClass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\LeaderDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\UpdateLeaderReques.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\LeaderRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\CreateTeamDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\Team.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\Leader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\LeaderService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Enums\\StatusEnum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\TeamService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\BaseModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\TeamRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Migrations\\20250613121445_Leader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\QueryExtesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\CompanyRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\ProfessionalRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\ServiceExtension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Enums\\TeamStatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\PlanSubscriptionService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\PlanService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\UserService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\ProfessionalService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\UpdateTeamDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPagedDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamMemberDTO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E88EE5D2-1BC7-4BF4-A06F-06F531C9D3A9}|..\\Core\\Core.csproj|c:\\users\\bruno\\onedrive\\\u00E1rea de trabalho\\projetos b7\\noah\\noahapi\\api\\core\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -165,622 +41,137 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CreateTeamDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\CreateTeamDTO.cs",
-              "RelativeDocumentMoniker": "..\\Core\\DTO\\Teams\\CreateTeamDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\CreateTeamDTO.cs",
-              "RelativeToolTip": "..\\Core\\DTO\\Teams\\CreateTeamDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:56:13.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\Repositories\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs",
-              "RelativeToolTip": "..\\Infrastructure\\Repositories\\UnitOfWork.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAcwEwAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:57:50.69Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TeamStatus.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Enums\\TeamStatus.cs",
-              "RelativeDocumentMoniker": "..\\Core\\Enums\\TeamStatus.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Enums\\TeamStatus.cs",
-              "RelativeToolTip": "..\\Core\\Enums\\TeamStatus.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:57:29.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StatusEnum.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Enums\\StatusEnum.cs",
-              "RelativeDocumentMoniker": "..\\Core\\Enums\\StatusEnum.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Enums\\StatusEnum.cs",
-              "RelativeToolTip": "..\\Core\\Enums\\StatusEnum.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:57:19.923Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UpdateTeamDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\UpdateTeamDTO.cs",
-              "RelativeDocumentMoniker": "..\\Core\\DTO\\Teams\\UpdateTeamDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\UpdateTeamDTO.cs",
-              "RelativeToolTip": "..\\Core\\DTO\\Teams\\UpdateTeamDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:57:04.543Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UpcomingServiceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs",
-              "RelativeDocumentMoniker": "..\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs",
-              "RelativeToolTip": "..\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:56:58.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TeamPerformanceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs",
-              "RelativeDocumentMoniker": "..\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs",
-              "RelativeToolTip": "..\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:56:43.351Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "TeamPagedDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\TeamPagedDTO.cs",
-              "RelativeDocumentMoniker": "..\\Core\\DTO\\Teams\\TeamPagedDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\TeamPagedDTO.cs",
-              "RelativeToolTip": "..\\Core\\DTO\\Teams\\TeamPagedDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:56:33.739Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "TeamMemberDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\TeamMemberDTO.cs",
-              "RelativeDocumentMoniker": "..\\Core\\DTO\\Teams\\TeamMemberDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\TeamMemberDTO.cs",
-              "RelativeToolTip": "..\\Core\\DTO\\Teams\\TeamMemberDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:56:26.893Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TeamController.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\Controllers\\TeamController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TeamController.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\Controllers\\TeamController.cs",
-              "RelativeToolTip": "Controllers\\TeamController.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAqwE4AAAAAAAAA",
+              "Title": "20250614000606_Appoiments.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Migrations\\20250614000606_Appoiments.cs",
+              "RelativeDocumentMoniker": "..\\Infrastructure\\Migrations\\20250614000606_Appoiments.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Migrations\\20250614000606_Appoiments.cs",
+              "RelativeToolTip": "..\\Infrastructure\\Migrations\\20250614000606_Appoiments.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:10:12.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DbContextClass.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\DbContextClass.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\DbContextClass.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\DbContextClass.cs",
-              "RelativeToolTip": "..\\Infrastructure\\DbContextClass.cs",
-              "ViewState": "AQIAAIkAAAAAAAAAAAA6wJ8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:58:03.124Z",
+              "WhenOpened": "2025-06-14T00:06:06.189Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AppointmentType.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Enums\\AppointmentType.cs",
+              "RelativeDocumentMoniker": "..\\Core\\Enums\\AppointmentType.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Enums\\AppointmentType.cs",
+              "RelativeToolTip": "..\\Core\\Enums\\AppointmentType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T00:00:45.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppointmentStatus.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Enums\\AppointmentStatus.cs",
+              "RelativeDocumentMoniker": "..\\Core\\Enums\\AppointmentStatus.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Enums\\AppointmentStatus.cs",
+              "RelativeToolTip": "..\\Core\\Enums\\AppointmentStatus.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T00:00:20.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "20250613235801_Appoiments.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Migrations\\20250613235801_Appoiments.cs",
+              "RelativeDocumentMoniker": "..\\Infrastructure\\Migrations\\20250613235801_Appoiments.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Migrations\\20250613235801_Appoiments.cs",
+              "RelativeToolTip": "..\\Infrastructure\\Migrations\\20250613235801_Appoiments.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-13T23:58:01.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAHoAAAAAAAAAAADwv44AAAAAAAAA",
+              "ViewState": "AQIAAIQAAAAAAAAAAAAAAB8AAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T16:58:36.376Z",
+              "WhenOpened": "2025-06-13T23:55:00.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "TeamDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\TeamDTO.cs",
-              "RelativeDocumentMoniker": "..\\Core\\DTO\\Teams\\TeamDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\DTO\\Teams\\TeamDTO.cs",
-              "RelativeToolTip": "..\\Core\\DTO\\Teams\\TeamDTO.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAIwBIAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:56:18.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "TeamRepository.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Repositories\\TeamRepository.cs",
-              "RelativeDocumentMoniker": "..\\Infrastructure\\Repositories\\TeamRepository.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Repositories\\TeamRepository.cs",
-              "RelativeToolTip": "..\\Infrastructure\\Repositories\\TeamRepository.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAkwC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:54:18.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Team.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Models\\Team.cs",
-              "RelativeDocumentMoniker": "..\\Core\\Models\\Team.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Models\\Team.cs",
-              "RelativeToolTip": "..\\Core\\Models\\Team.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAA9wBUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T17:53:58.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CreateLeaderRequest.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\CreateLeaderRequest.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Leader\\CreateLeaderRequest.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\CreateLeaderRequest.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Leader\\CreateLeaderRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T18:07:05.129Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "PlanRepository.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\PlanRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\PlanRepository.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\PlanRepository.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\PlanRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T11:59:53.118Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 1,
               "Title": "DbContextClass.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\DbContextClass.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\DbContextClass.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\DbContextClass.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\DbContextClass.cs",
-              "ViewState": "AQIAAIsAAAAAAAAAAADwv58AAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\DbContextClass.cs",
+              "RelativeDocumentMoniker": "..\\Infrastructure\\DbContextClass.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\DbContextClass.cs",
+              "RelativeToolTip": "..\\Infrastructure\\DbContextClass.cs",
+              "ViewState": "AQIAALQAAAAAAAAAAADwv8gAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:22:49.591Z"
+              "WhenOpened": "2025-06-13T23:54:38.552Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "LeaderDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\LeaderDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Leader\\LeaderDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\LeaderDTO.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Leader\\LeaderDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T18:06:37.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UpdateLeaderReques.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\UpdateLeaderReques.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Leader\\UpdateLeaderReques.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Leader\\UpdateLeaderReques.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Leader\\UpdateLeaderReques.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T18:07:17.323Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "LeaderRepository.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\LeaderRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\LeaderRepository.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\LeaderRepository.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\LeaderRepository.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAqwCUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T18:01:12.738Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "CreateTeamDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\CreateTeamDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\CreateTeamDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\CreateTeamDTO.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\CreateTeamDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:17:09.227Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "LeaderController.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\Controllers\\LeaderController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LeaderController.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\Controllers\\LeaderController.cs",
-              "RelativeToolTip": "Controllers\\LeaderController.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAqwJEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T18:04:34.138Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Team.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\Team.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\Models\\Team.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\Team.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\Models\\Team.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA1wBUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:06:31.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-13T12:29:06.31Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Leader.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\Leader.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\Models\\Leader.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\Leader.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\Models\\Leader.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:58:43.12Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "LeaderService.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\LeaderService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Services\\LeaderService.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\LeaderService.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Services\\LeaderService.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAqwEoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T18:03:01.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "StatusEnum.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Enums\\StatusEnum.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\Enums\\StatusEnum.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Enums\\StatusEnum.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\Enums\\StatusEnum.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T16:51:11.324Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "TeamService.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\TeamService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Services\\TeamService.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\TeamService.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Services\\TeamService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAUwC0AAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:09:04.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "BaseModel.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\BaseModel.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\Models\\BaseModel.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Models\\BaseModel.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\Models\\BaseModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T11:53:36.663Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "TeamRepository.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\TeamRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\TeamRepository.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\TeamRepository.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\TeamRepository.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAqwC8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:08:10.613Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "20250613121445_Leader.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Migrations\\20250613121445_Leader.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Migrations\\20250613121445_Leader.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Migrations\\20250613121445_Leader.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Migrations\\20250613121445_Leader.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T12:14:46.021Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "QueryExtesion.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\QueryExtesion.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\QueryExtesion.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\QueryExtesion.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\QueryExtesion.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAA8wCsAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T12:05:01.821Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "CompanyRepository.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\CompanyRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\CompanyRepository.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\CompanyRepository.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\CompanyRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T11:59:35.216Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "ProfessionalRepository.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\ProfessionalRepository.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\ProfessionalRepository.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\ProfessionalRepository.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\ProfessionalRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T11:59:28.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 7,
               "Title": "ServiceExtension.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\ServiceExtension.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\ServiceExtension.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\ServiceExtension.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\ServiceExtension\\ServiceExtension.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAqwCUAAAAAAAAA",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\ServiceExtension\\ServiceExtension.cs",
+              "RelativeDocumentMoniker": "..\\Infrastructure\\ServiceExtension\\ServiceExtension.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\ServiceExtension\\ServiceExtension.cs",
+              "RelativeToolTip": "..\\Infrastructure\\ServiceExtension\\ServiceExtension.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwB4AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:18:58.094Z"
+              "WhenOpened": "2025-06-13T23:54:31.889Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "TeamStatus.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Enums\\TeamStatus.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\Enums\\TeamStatus.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Enums\\TeamStatus.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\Enums\\TeamStatus.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "DocumentIndex": 8,
+              "Title": "QueryExtesion.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\ServiceExtension\\QueryExtesion.cs",
+              "RelativeDocumentMoniker": "..\\Infrastructure\\ServiceExtension\\QueryExtesion.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\ServiceExtension\\QueryExtesion.cs",
+              "RelativeToolTip": "..\\Infrastructure\\ServiceExtension\\QueryExtesion.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAA8wDcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T16:51:31.367Z"
+              "WhenOpened": "2025-06-13T23:45:05.833Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 5,
               "Title": "UnitOfWork.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAgwEwAAAABAAAA",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "..\\Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "..\\Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAqwFEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:26:37.353Z"
+              "WhenOpened": "2025-06-13T23:38:38.161Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "PlanSubscriptionService.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\PlanSubscriptionService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Services\\PlanSubscriptionService.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\PlanSubscriptionService.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Services\\PlanSubscriptionService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 9,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "..\\Core\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\Core\\Models\\Customer.cs",
+              "RelativeToolTip": "..\\Core\\Models\\Customer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T16:41:33.008Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "PlanService.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\PlanService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Services\\PlanService.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\PlanService.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Services\\PlanService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T16:41:35.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\UserService.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Services\\UserService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:41:21.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "ProfessionalService.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\ProfessionalService.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Services\\ProfessionalService.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Services\\ProfessionalService.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Services\\ProfessionalService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:41:38.316Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "UpcomingServiceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\UpcomingServiceDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:17:16.873Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "TeamDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamDTO.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:17:12.093Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "UpdateTeamDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\UpdateTeamDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\UpdateTeamDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\UpdateTeamDTO.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\UpdateTeamDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:17:17.703Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "Core.csproj",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Core.csproj",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\Core.csproj",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\Core.csproj",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\Core.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-09T17:26:06.67Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "TeamPerformanceDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPerformanceDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:17:15.978Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "TeamPagedDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPagedDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPagedDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPagedDTO.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamPagedDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:17:14.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "TeamMemberDTO.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamMemberDTO.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamMemberDTO.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamMemberDTO.cs",
-              "RelativeToolTip": "..\\..\\..\\Noah.api\\Api\\Core\\DTO\\Teams\\TeamMemberDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T17:17:13.54Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "PlanSubscriptionController.cs",
-              "DocumentMoniker": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\Controllers\\PlanSubscriptionController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PlanSubscriptionController.cs",
-              "ToolTip": "C:\\Users\\bruno\\OneDrive\\\u00C1rea de Trabalho\\Projetos B7\\Noah\\noahapi\\Api\\ControlApi\\Controllers\\PlanSubscriptionController.cs",
-              "RelativeToolTip": "Controllers\\PlanSubscriptionController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAiwB0AAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T16:47:18.927Z"
+              "WhenOpened": "2025-06-13T23:36:30.503Z",
+              "EditorCaption": ""
             }
           ]
         }

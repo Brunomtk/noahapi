@@ -29,6 +29,7 @@ builder.Services.AddScoped<IPlanSubscriptionService, PlanSubscriptionService>();
 builder.Services.AddScoped<IProfessionalService, ProfessionalService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<ILeaderService, LeaderService>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
 // ---------------------
 // AUTENTICAÇÃO JWT

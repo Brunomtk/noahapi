@@ -17,6 +17,9 @@ namespace Infrastructure
         public DbSet<Team> Teams { get; set; }
         public DbSet<Leader> Leaders { get; set; }
 
+        // ✅ Adicionado
+        public DbSet<Appointment> Appointments { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Users
@@ -129,6 +132,44 @@ namespace Infrastructure
                 entity.HasOne(l => l.User)
                       .WithMany()
                       .HasForeignKey(l => l.UserId)
+                      .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // ✅ Appointment
+            modelBuilder.Entity<Appointment>(entity =>
+            {
+                entity.ToTable("Appointments");
+                entity.HasKey(a => a.Id);
+
+                entity.Property(a => a.Title).IsRequired();
+                entity.Property(a => a.Address);
+                entity.Property(a => a.Start).IsRequired();
+                entity.Property(a => a.End).IsRequired();
+                entity.Property(a => a.Status).HasConversion<string>().IsRequired();
+                entity.Property(a => a.Type).HasConversion<string>().IsRequired();
+                entity.Property(a => a.Notes);
+
+                entity.Property(a => a.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(a => a.UpdatedDate).HasDefaultValueSql("now()");
+
+                entity.HasOne(a => a.Company)
+                      .WithMany()
+                      .HasForeignKey(a => a.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(a => a.Customer)
+                      .WithMany()
+                      .HasForeignKey(a => a.CustomerId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(a => a.Team)
+                      .WithMany()
+                      .HasForeignKey(a => a.TeamId)
+                      .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasOne(a => a.Professional)
+                      .WithMany()
+                      .HasForeignKey(a => a.ProfessionalId)
                       .OnDelete(DeleteBehavior.Restrict);
             });
 

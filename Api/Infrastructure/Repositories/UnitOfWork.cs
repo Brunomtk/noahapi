@@ -1,7 +1,6 @@
-using System;
+ï»¿using System;
 using System.Threading.Tasks;
 using Core.Models;
-using Infrastructure.Repositories;
 
 namespace Infrastructure.Repositories
 {
@@ -15,7 +14,8 @@ namespace Infrastructure.Repositories
         public IPlanSubscriptionRepository PlanSubscriptions { get; }
         public IProfessionalRepository Professionals { get; }
         public ITeamRepository Teams { get; }
-        public ILeaderRepository Leaders { get; } // ? repositório de líderes
+        public ILeaderRepository Leaders { get; }
+        public IAppointmentRepository Appointments { get; }
 
         public UnitOfWork(
             DbContextClass dbContext,
@@ -25,7 +25,8 @@ namespace Infrastructure.Repositories
             IPlanSubscriptionRepository planSubscriptionRepository,
             IProfessionalRepository professionalRepository,
             ITeamRepository teamRepository,
-            ILeaderRepository leaderRepository)
+            ILeaderRepository leaderRepository,
+            IAppointmentRepository appointmentRepository)
         {
             _dbContext = dbContext;
             Users = userRepository;
@@ -34,7 +35,8 @@ namespace Infrastructure.Repositories
             PlanSubscriptions = planSubscriptionRepository;
             Professionals = professionalRepository;
             Teams = teamRepository;
-            Leaders = leaderRepository; // ? injeção do repositório de Leader
+            Leaders = leaderRepository;
+            Appointments = appointmentRepository;
         }
 
         public int Save()
@@ -61,17 +63,19 @@ namespace Infrastructure.Repositories
             }
         }
     }
-}
-public interface IUnitOfWork : IDisposable
-{
-    IUserRepository Users { get; }
-    ICompanyRepository Companies { get; }
-    IPlanRepository Plans { get; }
-    IPlanSubscriptionRepository PlanSubscriptions { get; }
-    IProfessionalRepository Professionals { get; }
-    ITeamRepository Teams { get; }
-    ILeaderRepository Leaders { get; } // ? necessário para LeaderService
 
-    int Save();
-    Task<int> SaveAsync(); // ? usado em serviços assíncronos
+    public interface IUnitOfWork : IDisposable
+    {
+        IUserRepository Users { get; }
+        ICompanyRepository Companies { get; }
+        IPlanRepository Plans { get; }
+        IPlanSubscriptionRepository PlanSubscriptions { get; }
+        IProfessionalRepository Professionals { get; }
+        ITeamRepository Teams { get; }
+        ILeaderRepository Leaders { get; }
+        IAppointmentRepository Appointments { get; }
+
+        int Save();
+        Task<int> SaveAsync();
+    }
 }
