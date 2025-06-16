@@ -1,22 +1,30 @@
 ﻿using System;
-using Core.Enums;
+using System.ComponentModel.DataAnnotations;
 
-namespace Core.Models
+namespace Core.DTO
 {
-    public class Customer : BaseModel
+    public class CreateCustomerDTO
     {
+        [Required]
         public string Name { get; set; } = string.Empty;
+
+        [Required]
         public string Document { get; set; } = string.Empty;
+
+        [EmailAddress]
         public string Email { get; set; } = string.Empty;
+
         public string Phone { get; set; } = string.Empty;
+
         public string Address { get; set; } = string.Empty;
+
         public string City { get; set; } = string.Empty;
+
         public string State { get; set; } = string.Empty;
+
         public string? Observations { get; set; }
 
-        public StatusEnum Status { get; set; } = StatusEnum.Active;
-
-        public int CompanyId { get; set; } 
-        public Company Company { get; set; } = null!;
+        [Required]
+        public int CompanyId { get; set; } // ✅ Corrigido de Guid para int
     }
 }

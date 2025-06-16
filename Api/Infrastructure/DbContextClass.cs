@@ -16,9 +16,8 @@ namespace Infrastructure
         public DbSet<Professional> Professionals { get; set; }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Leader> Leaders { get; set; }
-
-        // ✅ Adicionado
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -135,7 +134,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
-            // ✅ Appointment
+            // Appointments
             modelBuilder.Entity<Appointment>(entity =>
             {
                 entity.ToTable("Appointments");
@@ -148,7 +147,6 @@ namespace Infrastructure
                 entity.Property(a => a.Status).HasConversion<string>().IsRequired();
                 entity.Property(a => a.Type).HasConversion<string>().IsRequired();
                 entity.Property(a => a.Notes);
-
                 entity.Property(a => a.CreatedDate).HasDefaultValueSql("now()");
                 entity.Property(a => a.UpdatedDate).HasDefaultValueSql("now()");
 
@@ -171,6 +169,30 @@ namespace Infrastructure
                       .WithMany()
                       .HasForeignKey(a => a.ProfessionalId)
                       .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // Customers
+            modelBuilder.Entity<Customer>(entity =>
+            {
+                entity.ToTable("Customers");
+                entity.HasKey(c => c.Id);
+
+                entity.Property(c => c.Name).IsRequired();
+                entity.Property(c => c.Document).IsRequired();
+                entity.Property(c => c.Email);
+                entity.Property(c => c.Phone);
+                entity.Property(c => c.Address);
+                entity.Property(c => c.City);
+                entity.Property(c => c.State);
+                entity.Property(c => c.Observations);
+                entity.Property(c => c.Status).HasConversion<string>();
+                entity.Property(c => c.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(c => c.UpdatedDate).HasDefaultValueSql("now()");
+
+                entity.HasOne(c => c.Company)
+                      .WithMany()
+                      .HasForeignKey(c => c.CompanyId)
+                      .OnDelete(DeleteBehavior.Cascade);
             });
 
             base.OnModelCreating(modelBuilder);

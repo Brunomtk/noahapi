@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Enums;
+using System;
 
 namespace Core.DTO.Appointment
 {
@@ -10,13 +11,13 @@ namespace Core.DTO.Appointment
         public DateTime Start { get; set; }
         public DateTime End { get; set; }
 
-        public int CompanyId { get; set; }
-        public int? CustomerId { get; set; }
-        public int? TeamId { get; set; }
-        public int? ProfessionalId { get; set; }
+        public Guid CompanyId { get; set; }
+        public Guid? CustomerId { get; set; }
+        public Guid? TeamId { get; set; }
+        public Guid? ProfessionalId { get; set; }
 
-        public string Status { get; set; } = "Scheduled";
-        public string Type { get; set; } = "Regular";
+        public AppointmentStatus? Status { get; set; }
+        public AppointmentType? Type { get; set; }
 
         public string? Notes { get; set; }
     }

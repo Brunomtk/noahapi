@@ -1,7 +1,6 @@
 ﻿using Core.DTO.Appointment;
 using Core.Enums;
 using Core.Models;
-using Infrastructure.ServiceExtension;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services;
@@ -20,34 +19,25 @@ namespace ControlApi.Controllers
             _appointmentService = appointmentService;
         }
 
-        /// <summary>
-        /// Lista agendamentos com paginação, filtro por status e busca por título.
-        /// </summary>
         [HttpGet]
         public async Task<IActionResult> GetPaged(
             [FromQuery] int page = 1,
             [FromQuery] int pageSize = 10,
-            [FromQuery] string? status = null,
+            [FromQuery] AppointmentStatus? status = null,
             [FromQuery] string? search = null)
         {
-            var result = await _appointmentService.GetPagedAppointmentsAsync(page, pageSize, status, search);
-            return Ok(result);
+            var resultPaged = await _appointmentService.GetPagedAppointments(page, pageSize, status, search);
+            return Ok(resultPaged);
         }
 
-        /// <summary>
-        /// Busca um agendamento por ID.
-        /// </summary>
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetById(int id)
+        public async Task<IActionResult> GetById(Guid id)
         {
-            var appointment = await _appointmentService.GetByIdAsync(id);
+            var appointment = await _appointmentService.GetById(id);
             if (appointment == null) return NotFound();
             return Ok(appointment);
         }
 
-        /// <summary>
-        /// Cria um novo agendamento.
-        /// </summary>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateAppointmentDTO dto)
         {
@@ -61,22 +51,21 @@ namespace ControlApi.Controllers
                 CustomerId = dto.CustomerId,
                 TeamId = dto.TeamId,
                 ProfessionalId = dto.ProfessionalId,
-                Status = Enum.Parse<AppointmentStatus>(dto.Status, true),
-                Type = Enum.Parse<AppointmentType>(dto.Type, true),
+                Status = dto.Status ?? AppointmentStatus.Scheduled,
+                Type = dto.Type ?? AppointmentType.Regular,
                 Notes = dto.Notes
             };
 
-            var created = await _appointmentService.CreateAsync(appointment);
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+            var success = await _appointmentService.Create(appointment);
+            if (!success) return BadRequest("Erro ao criar agendamento.");
+
+            return CreatedAtAction(nameof(GetById), new { id = appointment.Id }, appointment);
         }
 
-        /// <summary>
-        /// Atualiza um agendamento existente.
-        /// </summary>
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateAppointmentDTO dto)
+        public async Task<IActionResult> Update(Guid id, [FromBody] UpdateAppointmentDTO dto)
         {
-            var existing = await _appointmentService.GetByIdAsync(id);
+            var existing = await _appointmentService.GetById(id);
             if (existing == null) return NotFound();
 
             if (dto.Title != null) existing.Title = dto.Title;
@@ -87,22 +76,25 @@ namespace ControlApi.Controllers
             if (dto.CustomerId.HasValue) existing.CustomerId = dto.CustomerId;
             if (dto.TeamId.HasValue) existing.TeamId = dto.TeamId;
             if (dto.ProfessionalId.HasValue) existing.ProfessionalId = dto.ProfessionalId;
-            if (dto.Status != null) existing.Status = Enum.Parse<AppointmentStatus>(dto.Status, true);
-            if (dto.Type != null) existing.Type = Enum.Parse<AppointmentType>(dto.Type, true);
+            if (dto.Status.HasValue) existing.Status = dto.Status.Value;
+            if (dto.Type.HasValue) existing.Type = dto.Type.Value;
             if (dto.Notes != null) existing.Notes = dto.Notes;
 
-            var updated = await _appointmentService.UpdateAsync(id, existing);
-            return Ok(updated);
+            var success = await _appointmentService.Update(existing);
+            if (!success) return BadRequest("Erro ao atualizar agendamento.");
+
+            return Ok(existing);
         }
 
-        /// <summary>
-        /// Remove um agendamento.
-        /// </summary>
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            var success = await _appointmentService.DeleteAsync(id);
-            if (!success) return NotFound();
+            var existing = await _appointmentService.GetById(id);
+            if (existing == null) return NotFound();
+
+            var success = await _appointmentService.Delete(existing);
+            if (!success) return BadRequest("Erro ao excluir agendamento.");
+
             return NoContent();
         }
     }

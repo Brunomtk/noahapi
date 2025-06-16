@@ -1,4 +1,5 @@
-﻿using Core.Models;
+﻿using Core.Enums;
+using Core.Models;
 using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ namespace Infrastructure.Repositories
     {
         public AppointmentRepository(DbContextClass context) : base(context) { }
 
-        public async Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(int page, int pageSize, string? status = null, string? search = null)
+        public async Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(int page, int pageSize, AppointmentStatus? status = null, string? search = null)
         {
             var query = _dbContext.Set<Appointment>()
                 .Include(a => a.Company)
@@ -18,46 +19,64 @@ namespace Infrastructure.Repositories
                 .Include(a => a.Professional)
                 .AsQueryable();
 
-            if (!string.IsNullOrEmpty(status))
-                query = query.Where(a => a.Status.ToString().ToLower() == status.ToLower());
+            if (status.HasValue)
+                query = query.Where(a => a.Status == status.Value);
 
-            if (!string.IsNullOrEmpty(search))
-                query = query.Where(a => a.Title.ToLower().Contains(search.ToLower()));
+            if (!string.IsNullOrWhiteSpace(search))
+                query = query.Where(a => a.Title.ToLowerInvariant().Contains(search.ToLowerInvariant()));
 
-            return await query.OrderByDescending(a => a.Start).GetPagedAsync<Appointment>(page, pageSize);
+            return await query
+                .OrderByDescending(a => a.Start)
+                .GetPagedAsync<Appointment>(page, pageSize);
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByCompanyAsync(int companyId)
+        public async Task<List<Appointment>> GetAppointmentsByCompanyAsync(Guid companyId)
         {
             return await _dbContext.Set<Appointment>()
+                .Include(a => a.Customer)
+                .Include(a => a.Team)
+                .Include(a => a.Professional)
                 .Where(a => a.CompanyId == companyId)
                 .ToListAsync();
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByTeamAsync(int teamId)
+        public async Task<List<Appointment>> GetAppointmentsByTeamAsync(Guid teamId)
         {
             return await _dbContext.Set<Appointment>()
+                .Include(a => a.Company)
+                .Include(a => a.Customer)
+                .Include(a => a.Professional)
                 .Where(a => a.TeamId == teamId)
                 .ToListAsync();
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByProfessionalAsync(int professionalId)
+        public async Task<List<Appointment>> GetAppointmentsByProfessionalAsync(Guid professionalId)
         {
             return await _dbContext.Set<Appointment>()
+                .Include(a => a.Company)
+                .Include(a => a.Customer)
+                .Include(a => a.Team)
                 .Where(a => a.ProfessionalId == professionalId)
                 .ToListAsync();
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByCustomerAsync(int customerId)
+        public async Task<List<Appointment>> GetAppointmentsByCustomerAsync(Guid customerId)
         {
             return await _dbContext.Set<Appointment>()
+                .Include(a => a.Company)
+                .Include(a => a.Team)
+                .Include(a => a.Professional)
                 .Where(a => a.CustomerId == customerId)
                 .ToListAsync();
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByDateRangeAsync(DateTime start, DateTime end, int? companyId = null)
+        public async Task<List<Appointment>> GetAppointmentsByDateRangeAsync(DateTime start, DateTime end, Guid? companyId = null)
         {
             var query = _dbContext.Set<Appointment>()
+                .Include(a => a.Company)
+                .Include(a => a.Customer)
+                .Include(a => a.Team)
+                .Include(a => a.Professional)
                 .Where(a => a.Start >= start && a.End <= end);
 
             if (companyId.HasValue)
@@ -69,10 +88,10 @@ namespace Infrastructure.Repositories
 }
 public interface IAppointmentRepository : IGenericRepository<Appointment>
 {
-    Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(int page, int pageSize, string? status = null, string? search = null);
-    Task<List<Appointment>> GetAppointmentsByCompanyAsync(int companyId);
-    Task<List<Appointment>> GetAppointmentsByTeamAsync(int teamId);
-    Task<List<Appointment>> GetAppointmentsByProfessionalAsync(int professionalId);
-    Task<List<Appointment>> GetAppointmentsByCustomerAsync(int customerId);
-    Task<List<Appointment>> GetAppointmentsByDateRangeAsync(DateTime start, DateTime end, int? companyId = null);
+    Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(int page, int pageSize, AppointmentStatus? status = null, string? search = null);
+    Task<List<Appointment>> GetAppointmentsByCompanyAsync(Guid companyId);
+    Task<List<Appointment>> GetAppointmentsByTeamAsync(Guid teamId);
+    Task<List<Appointment>> GetAppointmentsByProfessionalAsync(Guid professionalId);
+    Task<List<Appointment>> GetAppointmentsByCustomerAsync(Guid customerId);
+    Task<List<Appointment>> GetAppointmentsByDateRangeAsync(DateTime start, DateTime end, Guid? companyId = null);
 }

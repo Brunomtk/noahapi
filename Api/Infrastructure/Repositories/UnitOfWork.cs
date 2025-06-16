@@ -16,6 +16,7 @@ namespace Infrastructure.Repositories
         public ITeamRepository Teams { get; }
         public ILeaderRepository Leaders { get; }
         public IAppointmentRepository Appointments { get; }
+        public ICustomerRepository Customers { get; }
 
         public UnitOfWork(
             DbContextClass dbContext,
@@ -26,7 +27,8 @@ namespace Infrastructure.Repositories
             IProfessionalRepository professionalRepository,
             ITeamRepository teamRepository,
             ILeaderRepository leaderRepository,
-            IAppointmentRepository appointmentRepository)
+            IAppointmentRepository appointmentRepository,
+            ICustomerRepository customerRepository)
         {
             _dbContext = dbContext;
             Users = userRepository;
@@ -37,6 +39,7 @@ namespace Infrastructure.Repositories
             Teams = teamRepository;
             Leaders = leaderRepository;
             Appointments = appointmentRepository;
+            Customers = customerRepository;
         }
 
         public int Save()
@@ -74,6 +77,7 @@ namespace Infrastructure.Repositories
         ITeamRepository Teams { get; }
         ILeaderRepository Leaders { get; }
         IAppointmentRepository Appointments { get; }
+        ICustomerRepository Customers { get; }
 
         int Save();
         Task<int> SaveAsync();

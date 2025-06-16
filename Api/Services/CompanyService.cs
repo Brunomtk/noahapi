@@ -1,9 +1,9 @@
 ﻿using Core.DTO;
-using Core.Models;
+using Core.DTO.Company;
 using Core.Enums;
+using Core.Models;
 using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;
-using Core.DTO.Company;
 
 namespace Services
 {
@@ -21,7 +21,7 @@ namespace Services
             if (company == null) return false;
 
             await _unitOfWork.Companies.Add(company);
-            var result = _unitOfWork.Save();
+            var result = await _unitOfWork.SaveAsync();
             return result > 0;
         }
 
@@ -37,12 +37,13 @@ namespace Services
 
         public async Task<Company?> GetCompanyById(int companyId)
         {
+            if (companyId <= 0) return null;
             return await _unitOfWork.Companies.GetById(companyId);
         }
 
         public async Task<Company?> GetCompanyByCnpj(string cnpj)
         {
-            if (string.IsNullOrEmpty(cnpj)) return null;
+            if (string.IsNullOrWhiteSpace(cnpj)) return null;
             return await _unitOfWork.Companies.GetByCnpj(cnpj);
         }
 
@@ -60,8 +61,7 @@ namespace Services
             company.Status = request.Status;
 
             _unitOfWork.Companies.Update(company);
-            var result = _unitOfWork.Save();
-
+            var result = await _unitOfWork.SaveAsync();
             return result > 0;
         }
 
@@ -71,8 +71,7 @@ namespace Services
             if (company == null) return false;
 
             _unitOfWork.Companies.Delete(company);
-            var result = _unitOfWork.Save();
-
+            var result = await _unitOfWork.SaveAsync();
             return result > 0;
         }
     }
