@@ -13,16 +13,16 @@ namespace Core.Models
         public DateTime End { get; set; }
 
         // Relacionamentos
-        public Guid CompanyId { get; set; }
+        public int CompanyId { get; set; }
         public Company Company { get; set; } = null!;
 
-        public Guid? CustomerId { get; set; }
+        public int? CustomerId { get; set; }
         public Customer? Customer { get; set; }
 
-        public Guid? TeamId { get; set; }
+        public int? TeamId { get; set; }
         public Team? Team { get; set; }
 
-        public Guid? ProfessionalId { get; set; }
+        public int? ProfessionalId { get; set; }
         public Professional? Professional { get; set; }
 
         // Status e tipo

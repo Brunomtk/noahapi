@@ -1,6 +1,5 @@
 ﻿using Core.Enums;
 using Core.Models;
-using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,14 +22,14 @@ namespace Infrastructure.Repositories
                 query = query.Where(a => a.Status == status.Value);
 
             if (!string.IsNullOrWhiteSpace(search))
-                query = query.Where(a => a.Title.ToLowerInvariant().Contains(search.ToLowerInvariant()));
+                query = query.Where(a => a.Title.ToLower().Contains(search.ToLower()));
 
             return await query
                 .OrderByDescending(a => a.Start)
-                .GetPagedAsync<Appointment>(page, pageSize);
+                .GetPagedAsync(page, pageSize);
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByCompanyAsync(Guid companyId)
+        public async Task<List<Appointment>> GetAppointmentsByCompanyAsync(int companyId)
         {
             return await _dbContext.Set<Appointment>()
                 .Include(a => a.Customer)
@@ -40,7 +39,7 @@ namespace Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByTeamAsync(Guid teamId)
+        public async Task<List<Appointment>> GetAppointmentsByTeamAsync(int teamId)
         {
             return await _dbContext.Set<Appointment>()
                 .Include(a => a.Company)
@@ -50,7 +49,7 @@ namespace Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByProfessionalAsync(Guid professionalId)
+        public async Task<List<Appointment>> GetAppointmentsByProfessionalAsync(int professionalId)
         {
             return await _dbContext.Set<Appointment>()
                 .Include(a => a.Company)
@@ -60,7 +59,7 @@ namespace Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByCustomerAsync(Guid customerId)
+        public async Task<List<Appointment>> GetAppointmentsByCustomerAsync(int customerId)
         {
             return await _dbContext.Set<Appointment>()
                 .Include(a => a.Company)
@@ -70,7 +69,7 @@ namespace Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<List<Appointment>> GetAppointmentsByDateRangeAsync(DateTime start, DateTime end, Guid? companyId = null)
+        public async Task<List<Appointment>> GetAppointmentsByDateRangeAsync(DateTime start, DateTime end, int? companyId = null)
         {
             var query = _dbContext.Set<Appointment>()
                 .Include(a => a.Company)
@@ -85,13 +84,14 @@ namespace Infrastructure.Repositories
             return await query.ToListAsync();
         }
     }
-}
-public interface IAppointmentRepository : IGenericRepository<Appointment>
-{
-    Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(int page, int pageSize, AppointmentStatus? status = null, string? search = null);
-    Task<List<Appointment>> GetAppointmentsByCompanyAsync(Guid companyId);
-    Task<List<Appointment>> GetAppointmentsByTeamAsync(Guid teamId);
-    Task<List<Appointment>> GetAppointmentsByProfessionalAsync(Guid professionalId);
-    Task<List<Appointment>> GetAppointmentsByCustomerAsync(Guid customerId);
-    Task<List<Appointment>> GetAppointmentsByDateRangeAsync(DateTime start, DateTime end, Guid? companyId = null);
+
+    public interface IAppointmentRepository : IGenericRepository<Appointment>
+    {
+        Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(int page, int pageSize, AppointmentStatus? status = null, string? search = null);
+        Task<List<Appointment>> GetAppointmentsByCompanyAsync(int companyId);
+        Task<List<Appointment>> GetAppointmentsByTeamAsync(int teamId);
+        Task<List<Appointment>> GetAppointmentsByProfessionalAsync(int professionalId);
+        Task<List<Appointment>> GetAppointmentsByCustomerAsync(int customerId);
+        Task<List<Appointment>> GetAppointmentsByDateRangeAsync(DateTime start, DateTime end, int? companyId = null);
+    }
 }

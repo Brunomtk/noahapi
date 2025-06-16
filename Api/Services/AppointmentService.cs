@@ -3,7 +3,7 @@ using Core.DTO.Appointment;
 using Core.Enums;
 using Core.Models;
 using Infrastructure.Repositories;
-using Infrastructure.ServiceExtension;
+using Infrastructure.ServiceExtension; // Importante para PagedResult
 
 namespace Services
 {
@@ -21,32 +21,32 @@ namespace Services
             return await _unitOfWork.Appointments.GetPagedAppointmentsAsync(page, pageSize, status, search);
         }
 
-        public async Task<List<Appointment>> GetByCompany(Guid companyId)
+        public async Task<List<Appointment>> GetByCompany(int companyId)
         {
             return await _unitOfWork.Appointments.GetAppointmentsByCompanyAsync(companyId);
         }
 
-        public async Task<List<Appointment>> GetByTeam(Guid teamId)
+        public async Task<List<Appointment>> GetByTeam(int teamId)
         {
             return await _unitOfWork.Appointments.GetAppointmentsByTeamAsync(teamId);
         }
 
-        public async Task<List<Appointment>> GetByProfessional(Guid professionalId)
+        public async Task<List<Appointment>> GetByProfessional(int professionalId)
         {
             return await _unitOfWork.Appointments.GetAppointmentsByProfessionalAsync(professionalId);
         }
 
-        public async Task<List<Appointment>> GetByCustomer(Guid customerId)
+        public async Task<List<Appointment>> GetByCustomer(int customerId)
         {
             return await _unitOfWork.Appointments.GetAppointmentsByCustomerAsync(customerId);
         }
 
-        public async Task<List<Appointment>> GetByDateRange(DateTime start, DateTime end, Guid? companyId = null)
+        public async Task<List<Appointment>> GetByDateRange(DateTime start, DateTime end, int? companyId = null)
         {
             return await _unitOfWork.Appointments.GetAppointmentsByDateRangeAsync(start, end, companyId);
         }
 
-        public async Task<Appointment?> GetById(Guid id)
+        public async Task<Appointment?> GetById(int id)
         {
             return await _unitOfWork.Appointments.GetById(id);
         }
@@ -60,8 +60,8 @@ namespace Services
                 Start = dto.Start,
                 End = dto.End,
                 Notes = dto.Notes,
-                Status = dto.Status,
-                Type = dto.Type,
+                Status = dto.Status ?? AppointmentStatus.Scheduled,
+                Type = dto.Type ?? AppointmentType.Regular,
                 CompanyId = dto.CompanyId,
                 CustomerId = dto.CustomerId,
                 TeamId = dto.TeamId,
@@ -72,7 +72,7 @@ namespace Services
             return await _unitOfWork.SaveAsync() > 0;
         }
 
-        public async Task<bool> Update(Guid id, UpdateAppointmentDTO dto)
+        public async Task<bool> Update(int id, UpdateAppointmentDTO dto)
         {
             var appointment = await _unitOfWork.Appointments.GetById(id);
             if (appointment == null) return false;
@@ -84,6 +84,7 @@ namespace Services
             appointment.Notes = dto.Notes ?? appointment.Notes;
             appointment.Status = dto.Status ?? appointment.Status;
             appointment.Type = dto.Type ?? appointment.Type;
+            appointment.CompanyId = dto.CompanyId ?? appointment.CompanyId;
             appointment.CustomerId = dto.CustomerId ?? appointment.CustomerId;
             appointment.TeamId = dto.TeamId ?? appointment.TeamId;
             appointment.ProfessionalId = dto.ProfessionalId ?? appointment.ProfessionalId;
@@ -92,7 +93,7 @@ namespace Services
             return await _unitOfWork.SaveAsync() > 0;
         }
 
-        public async Task<bool> Delete(Guid id)
+        public async Task<bool> Delete(int id)
         {
             var appointment = await _unitOfWork.Appointments.GetById(id);
             if (appointment == null) return false;
@@ -101,17 +102,18 @@ namespace Services
             return await _unitOfWork.SaveAsync() > 0;
         }
     }
-}
-public interface IAppointmentService
-{
-    Task<PagedResult<Appointment>> GetPagedAppointments(int page, int pageSize, AppointmentStatus? status, string? search);
-    Task<List<Appointment>> GetByCompany(Guid companyId);
-    Task<List<Appointment>> GetByTeam(Guid teamId);
-    Task<List<Appointment>> GetByProfessional(Guid professionalId);
-    Task<List<Appointment>> GetByCustomer(Guid customerId);
-    Task<List<Appointment>> GetByDateRange(DateTime start, DateTime end, Guid? companyId = null);
-    Task<Appointment?> GetById(Guid id);
-    Task<bool> Create(CreateAppointmentDTO dto);
-    Task<bool> Update(Guid id, UpdateAppointmentDTO dto);
-    Task<bool> Delete(Guid id);
+
+    public interface IAppointmentService
+    {
+        Task<PagedResult<Appointment>> GetPagedAppointments(int page, int pageSize, AppointmentStatus? status, string? search);
+        Task<List<Appointment>> GetByCompany(int companyId);
+        Task<List<Appointment>> GetByTeam(int teamId);
+        Task<List<Appointment>> GetByProfessional(int professionalId);
+        Task<List<Appointment>> GetByCustomer(int customerId);
+        Task<List<Appointment>> GetByDateRange(DateTime start, DateTime end, int? companyId = null);
+        Task<Appointment?> GetById(int id);
+        Task<bool> Create(CreateAppointmentDTO dto);
+        Task<bool> Update(int id, UpdateAppointmentDTO dto);
+        Task<bool> Delete(int id);
+    }
 }
