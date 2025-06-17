@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Core.DTO
+namespace Core.DTO.Customer
 {
     public class CreateCustomerDTO
     {

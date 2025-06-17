@@ -17,6 +17,7 @@ namespace Infrastructure.Repositories
         public ILeaderRepository Leaders { get; }
         public IAppointmentRepository Appointments { get; }
         public ICustomerRepository Customers { get; }
+        public ICheckRecordRepository CheckRecords { get; } // ✅ NOVO
 
         public UnitOfWork(
             DbContextClass dbContext,
@@ -28,7 +29,9 @@ namespace Infrastructure.Repositories
             ITeamRepository teamRepository,
             ILeaderRepository leaderRepository,
             IAppointmentRepository appointmentRepository,
-            ICustomerRepository customerRepository)
+            ICustomerRepository customerRepository,
+            ICheckRecordRepository checkRecordRepository // ✅ NOVO
+        )
         {
             _dbContext = dbContext;
             Users = userRepository;
@@ -40,6 +43,7 @@ namespace Infrastructure.Repositories
             Leaders = leaderRepository;
             Appointments = appointmentRepository;
             Customers = customerRepository;
+            CheckRecords = checkRecordRepository; // ✅ NOVO
         }
 
         public int Save()
@@ -78,6 +82,7 @@ namespace Infrastructure.Repositories
         ILeaderRepository Leaders { get; }
         IAppointmentRepository Appointments { get; }
         ICustomerRepository Customers { get; }
+        ICheckRecordRepository CheckRecords { get; } // ✅ NOVO
 
         int Save();
         Task<int> SaveAsync();

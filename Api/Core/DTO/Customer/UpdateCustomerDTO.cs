@@ -1,12 +1,12 @@
 ﻿using Core.Enums;
 using System.ComponentModel.DataAnnotations;
 
-namespace Core.DTO
+namespace Core.DTO.Customer
 {
     public class UpdateCustomerDTO
     {
         [Required]
-        public int Id { get; set; } 
+        public int Id { get; set; }
 
         public string? Name { get; set; }
         public string? Document { get; set; }

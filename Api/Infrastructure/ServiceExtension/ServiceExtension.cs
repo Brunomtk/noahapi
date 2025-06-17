@@ -28,7 +28,8 @@ namespace Infrastructure.ServiceExtension
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<ILeaderRepository, LeaderRepository>();
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>(); 
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICheckRecordRepository, CheckRecordRepository>(); 
 
             // Unit of Work
             services.AddScoped<IUnitOfWork, UnitOfWork>();

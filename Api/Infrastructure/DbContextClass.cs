@@ -18,6 +18,7 @@ namespace Infrastructure
         public DbSet<Leader> Leaders { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<CheckRecord> CheckRecords { get; set; } // ✅ Novo DbSet
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -193,6 +194,32 @@ namespace Infrastructure
                       .WithMany()
                       .HasForeignKey(c => c.CompanyId)
                       .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            // ✅ CheckRecords
+            modelBuilder.Entity<CheckRecord>(entity =>
+            {
+                entity.ToTable("CheckRecords");
+                entity.HasKey(c => c.Id);
+
+                entity.Property(c => c.ProfessionalId).IsRequired();
+                entity.Property(c => c.CompanyId).IsRequired();
+                entity.Property(c => c.CustomerId).IsRequired();
+                entity.Property(c => c.AppointmentId).IsRequired();
+                entity.Property(c => c.Address).IsRequired();
+
+                entity.Property(c => c.ServiceType).IsRequired();
+                entity.Property(c => c.Status).HasConversion<int>();
+
+                entity.Property(c => c.Notes);
+                entity.Property(c => c.ProfessionalName);
+                entity.Property(c => c.CustomerName);
+                entity.Property(c => c.TeamId);
+                entity.Property(c => c.TeamName);
+                entity.Property(c => c.CheckInTime);
+                entity.Property(c => c.CheckOutTime);
+                entity.Property(c => c.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(c => c.UpdatedDate).HasDefaultValueSql("now()");
             });
 
             base.OnModelCreating(modelBuilder);

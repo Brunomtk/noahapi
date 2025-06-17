@@ -1,4 +1,4 @@
-﻿using Core.DTO;
+﻿using Core.DTO.Customer;
 using Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

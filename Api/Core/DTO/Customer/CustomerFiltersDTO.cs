@@ -1,10 +1,10 @@
 ﻿using Core.Enums;
 
-namespace Core.DTO
+namespace Core.DTO.Customer
 {
     public class CustomerFiltersDTO
     {
-        public int? CompanyId { get; set; } 
+        public int? CompanyId { get; set; }
         public string? Name { get; set; }
         public string? Document { get; set; }
         public StatusEnum? Status { get; set; }

@@ -1,4 +1,4 @@
-﻿using Core.DTO;
+﻿using Core.DTO.Customer;
 using Core.Models;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
