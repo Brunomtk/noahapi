@@ -1,4 +1,4 @@
-﻿using Core.DTO.CheckRecords;
+﻿using Core.DTO.CheckRecord;
 using Core.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

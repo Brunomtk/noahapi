@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Infrastructure/Repositories/UnitOfWork.cs
+using System;
 using System.Threading.Tasks;
 using Core.Models;
 
@@ -17,7 +18,10 @@ namespace Infrastructure.Repositories
         public ILeaderRepository Leaders { get; }
         public IAppointmentRepository Appointments { get; }
         public ICustomerRepository Customers { get; }
-        public ICheckRecordRepository CheckRecords { get; } // ✅ NOVO
+        public ICheckRecordRepository CheckRecords { get; }
+        public IRecurrenceRepository Recurrences { get; }
+        public IGpsTrackingRepository GpsTrackings { get; }
+        public IReviewRepository Reviews { get; }   // ← added
 
         public UnitOfWork(
             DbContextClass dbContext,
@@ -30,7 +34,10 @@ namespace Infrastructure.Repositories
             ILeaderRepository leaderRepository,
             IAppointmentRepository appointmentRepository,
             ICustomerRepository customerRepository,
-            ICheckRecordRepository checkRecordRepository // ✅ NOVO
+            ICheckRecordRepository checkRecordRepository,
+            IRecurrenceRepository recurrenceRepository,
+            IGpsTrackingRepository gpsTrackingRepository,
+            IReviewRepository reviewRepository    // ← added
         )
         {
             _dbContext = dbContext;
@@ -43,18 +50,17 @@ namespace Infrastructure.Repositories
             Leaders = leaderRepository;
             Appointments = appointmentRepository;
             Customers = customerRepository;
-            CheckRecords = checkRecordRepository; // ✅ NOVO
+            CheckRecords = checkRecordRepository;
+            Recurrences = recurrenceRepository;
+            GpsTrackings = gpsTrackingRepository;
+            Reviews = reviewRepository;           // ← added
         }
 
         public int Save()
-        {
-            return _dbContext.SaveChanges();
-        }
+            => _dbContext.SaveChanges();
 
-        public async Task<int> SaveAsync()
-        {
-            return await _dbContext.SaveChangesAsync();
-        }
+        public Task<int> SaveAsync()
+            => _dbContext.SaveChangesAsync();
 
         public void Dispose()
         {
@@ -65,9 +71,7 @@ namespace Infrastructure.Repositories
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)
-            {
                 _dbContext.Dispose();
-            }
         }
     }
 
@@ -82,7 +86,10 @@ namespace Infrastructure.Repositories
         ILeaderRepository Leaders { get; }
         IAppointmentRepository Appointments { get; }
         ICustomerRepository Customers { get; }
-        ICheckRecordRepository CheckRecords { get; } // ✅ NOVO
+        ICheckRecordRepository CheckRecords { get; }
+        IRecurrenceRepository Recurrences { get; }
+        IGpsTrackingRepository GpsTrackings { get; }
+        IReviewRepository Reviews { get; }      // ← added
 
         int Save();
         Task<int> SaveAsync();

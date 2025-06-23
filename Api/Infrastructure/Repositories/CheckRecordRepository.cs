@@ -1,12 +1,12 @@
-﻿using Core.DTO.CheckRecords;
-using Core.Enums;
-using Core.Models;
+﻿using Core.Models;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Core.DTO.CheckRecord;
+using Core.Enums.CheckRecord;
 
 namespace Infrastructure.Repositories
 {

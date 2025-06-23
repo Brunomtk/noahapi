@@ -1,23 +1,23 @@
-﻿using Core.Enums;
+﻿using Core.Enums.CheckRecord;
 using System;
 
 namespace Core.Models
 {
     public class CheckRecord : BaseModel
     {
-        public Guid ProfessionalId { get; set; }
+        public int ProfessionalId { get; set; }
         public string? ProfessionalName { get; set; }
 
-        public Guid CompanyId { get; set; }
+        public int CompanyId { get; set; }
 
-        public Guid CustomerId { get; set; }
+        public int CustomerId { get; set; }
         public string? CustomerName { get; set; }
 
-        public Guid AppointmentId { get; set; }
+        public int AppointmentId { get; set; }
 
         public string Address { get; set; } = string.Empty;
 
-        public Guid? TeamId { get; set; }
+        public int? TeamId { get; set; }
         public string? TeamName { get; set; }
 
         public DateTime? CheckInTime { get; set; }

@@ -14,14 +14,10 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ---------------------
-// CONFIGURAÇÃO DO DB + DEPENDÊNCIAS
-// ---------------------
-builder.Services.AddDIServices(builder.Configuration); // Inclui todos os repositórios, UoW e DbContext
+// Register DbContext, repositories and services
+builder.Services.AddDIServices(builder.Configuration);
 
-// ---------------------
-// SERVIÇOS (camada Services)
-// ---------------------
+// Domain service registrations
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IPlanService, PlanService>();
@@ -31,11 +27,12 @@ builder.Services.AddScoped<ITeamService, TeamService>();
 builder.Services.AddScoped<ILeaderService, LeaderService>();
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
-builder.Services.AddScoped<ICheckRecordService, CheckRecordService>(); // ✅ NOVO
+builder.Services.AddScoped<ICheckRecordService, CheckRecordService>();
+builder.Services.AddScoped<IRecurrenceService, RecurrenceService>();
+builder.Services.AddScoped<IGpsTrackingService, GpsTrackingService>();
+builder.Services.AddScoped<IReviewService, ReviewService>();  // added review service
 
-// ---------------------
-// AUTENTICAÇÃO JWT
-// ---------------------
+// JWT authentication configuration
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -54,34 +51,26 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddSingleton<IJWTManager, JWTManager>();
 
-// ---------------------
-// SWAGGER COM AUTENTICAÇÃO
-// ---------------------
+// Controllers and Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Control.API", Version = "v1" });
-
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "JWT Authorization header usando o esquema Bearer. Exemplo: \"Authorization: Bearer {token}\"",
+        Description = "JWT Authorization header using Bearer scheme",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
     });
-
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
             new OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                },
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" },
                 Scheme = "oauth2",
                 Name = "Bearer",
                 In = ParameterLocation.Header
@@ -91,9 +80,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// ---------------------
-// LOG SERILOG
-// ---------------------
+// Serilog configuration
 builder.Host.UseSerilog((context, loggerConfig) =>
 {
     loggerConfig
@@ -105,9 +92,6 @@ builder.Host.UseSerilog((context, loggerConfig) =>
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
 });
 
-// ---------------------
-// PIPELINE + MIDDLEWARE
-// ---------------------
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -119,27 +103,18 @@ if (app.Environment.IsDevelopment())
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
-app.MigrateDatabase(); // extensão customizada para aplicar migrations
-
+app.MigrateDatabase();
 app.UseSerilogRequestLogging(options =>
 {
     options.GetLevel = (httpContext, elapsed, ex) =>
     {
-        if (ex != null || httpContext.Response.StatusCode > 499)
-            return LogEventLevel.Error;
-        else if (httpContext.Response.StatusCode > 399)
-            return LogEventLevel.Warning;
-        else
-            return LogEventLevel.Information;
+        if (ex != null || httpContext.Response.StatusCode > 499) return LogEventLevel.Error;
+        if (httpContext.Response.StatusCode > 399) return LogEventLevel.Warning;
+        return LogEventLevel.Information;
     };
 });
-
 app.UseMiddleware<ExceptionHandlingMiddleware>();
-
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

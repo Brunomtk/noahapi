@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Core.DTO.CheckRecords;
-using Core.Enums;
+using Core.DTO.CheckRecord;
+using Core.Enums.CheckRecord;
 using Core.Models;
 using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;

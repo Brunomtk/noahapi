@@ -1,9 +1,10 @@
 ﻿using Core.DTO;
 using Core.DTO.Appointment;
 using Core.Enums;
+using Core.Enums.Appointment;
 using Core.Models;
 using Infrastructure.Repositories;
-using Infrastructure.ServiceExtension; // Importante para PagedResult
+using Infrastructure.ServiceExtension;
 
 namespace Services
 {

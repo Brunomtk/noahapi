@@ -1,4 +1,4 @@
-﻿using Core.Enums;
+﻿using Core.Enums.Plan;
 
 namespace Core.Models
 {

@@ -7,19 +7,14 @@ namespace Infrastructure.ServiceExtension
 {
     public static class ServiceExtension
     {
-        /// <summary>
-        /// Configura os serviços de injeção de dependência (DI).
-        /// </summary>
         public static IServiceCollection AddDIServices(this IServiceCollection services, IConfiguration configuration)
         {
-            // Conexão com banco de dados PostgreSQL
-            string connectionString = configuration.GetConnectionString("DefaultConnection");
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DbContextClass>(options =>
-            {
-                options.UseNpgsql(connectionString);
-            });
+                options.UseNpgsql(connectionString)
+            );
 
-            // Repositórios
+            // Repository registrations
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IPlanRepository, PlanRepository>();
@@ -29,9 +24,12 @@ namespace Infrastructure.ServiceExtension
             services.AddScoped<ILeaderRepository, LeaderRepository>();
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
-            services.AddScoped<ICheckRecordRepository, CheckRecordRepository>(); 
+            services.AddScoped<ICheckRecordRepository, CheckRecordRepository>();
+            services.AddScoped<IRecurrenceRepository, RecurrenceRepository>();
+            services.AddScoped<IGpsTrackingRepository, GpsTrackingRepository>();
+            services.AddScoped<IReviewRepository, ReviewRepository>();  // registered review repo
 
-            // Unit of Work
+            // Service registrations
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;
