@@ -1,6 +1,6 @@
-﻿// Infrastructure/Repositories/UnitOfWork.cs
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Infrastructure.Repositories;
 using Core.Models;
 
 namespace Infrastructure.Repositories
@@ -21,7 +21,8 @@ namespace Infrastructure.Repositories
         public ICheckRecordRepository CheckRecords { get; }
         public IRecurrenceRepository Recurrences { get; }
         public IGpsTrackingRepository GpsTrackings { get; }
-        public IReviewRepository Reviews { get; }   // ← added
+        public IReviewRepository Reviews { get; }
+        public IInternalFeedbackRepository InternalFeedbacks { get; }
 
         public UnitOfWork(
             DbContextClass dbContext,
@@ -37,7 +38,8 @@ namespace Infrastructure.Repositories
             ICheckRecordRepository checkRecordRepository,
             IRecurrenceRepository recurrenceRepository,
             IGpsTrackingRepository gpsTrackingRepository,
-            IReviewRepository reviewRepository    // ← added
+            IReviewRepository reviewRepository,
+            IInternalFeedbackRepository internalFeedbackRepository
         )
         {
             _dbContext = dbContext;
@@ -53,7 +55,8 @@ namespace Infrastructure.Repositories
             CheckRecords = checkRecordRepository;
             Recurrences = recurrenceRepository;
             GpsTrackings = gpsTrackingRepository;
-            Reviews = reviewRepository;           // ← added
+            Reviews = reviewRepository;
+            InternalFeedbacks = internalFeedbackRepository;
         }
 
         public int Save()
@@ -89,7 +92,8 @@ namespace Infrastructure.Repositories
         ICheckRecordRepository CheckRecords { get; }
         IRecurrenceRepository Recurrences { get; }
         IGpsTrackingRepository GpsTrackings { get; }
-        IReviewRepository Reviews { get; }      // ← added
+        IReviewRepository Reviews { get; }
+        IInternalFeedbackRepository InternalFeedbacks { get; }
 
         int Save();
         Task<int> SaveAsync();

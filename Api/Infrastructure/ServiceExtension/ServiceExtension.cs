@@ -27,7 +27,8 @@ namespace Infrastructure.ServiceExtension
             services.AddScoped<ICheckRecordRepository, CheckRecordRepository>();
             services.AddScoped<IRecurrenceRepository, RecurrenceRepository>();
             services.AddScoped<IGpsTrackingRepository, GpsTrackingRepository>();
-            services.AddScoped<IReviewRepository, ReviewRepository>();  // registered review repo
+            services.AddScoped<IReviewRepository, ReviewRepository>();
+            services.AddScoped<IInternalFeedbackRepository, InternalFeedbackRepository>(); 
 
             // Service registrations
             services.AddScoped<IUnitOfWork, UnitOfWork>();

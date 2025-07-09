@@ -1,5 +1,4 @@
 ﻿using ControlApi.Middleware;
-using Core.Models;
 using Infrastructure.Authenticate;
 using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;
@@ -10,6 +9,8 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Exceptions;
 using Services;
+using System;
+using System.Collections.Generic;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -30,7 +31,10 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICheckRecordService, CheckRecordService>();
 builder.Services.AddScoped<IRecurrenceService, RecurrenceService>();
 builder.Services.AddScoped<IGpsTrackingService, GpsTrackingService>();
-builder.Services.AddScoped<IReviewService, ReviewService>();  // added review service
+builder.Services.AddScoped<IReviewService, ReviewService>();
+
+// Internal Feedback module
+builder.Services.AddScoped<IInternalFeedbackService, InternalFeedbackService>();
 
 // JWT authentication configuration
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -45,7 +49,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
-            ClockSkew = TimeSpan.Zero,
+            ClockSkew = TimeSpan.Zero
         };
     });
 
@@ -70,7 +74,11 @@ builder.Services.AddSwaggerGen(c =>
         {
             new OpenApiSecurityScheme
             {
-                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" },
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
                 Scheme = "oauth2",
                 Name = "Bearer",
                 In = ParameterLocation.Header

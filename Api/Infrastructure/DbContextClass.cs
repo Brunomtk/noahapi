@@ -1,13 +1,18 @@
-﻿using Core.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Core.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure
 {
     public class DbContextClass : DbContext
     {
-        public DbContextClass(DbContextOptions<DbContextClass> options) : base(options) { }
+        public DbContextClass(DbContextOptions<DbContextClass> options)
+            : base(options)
+        {
+        }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Company> Companies { get; set; }
@@ -21,18 +26,21 @@ namespace Infrastructure
         public DbSet<CheckRecord> CheckRecords { get; set; }
         public DbSet<Recurrence> Recurrences { get; set; }
         public DbSet<GpsTracking> GpsTrackings { get; set; }
-
         public DbSet<Review> Reviews { get; set; }
-
+        public DbSet<InternalFeedback> InternalFeedbacks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            // Users
             modelBuilder.Entity<User>(entity =>
             {
                 entity.ToTable("Users");
                 entity.HasKey(u => u.Id);
             });
 
+            // Companies
             modelBuilder.Entity<Company>(entity =>
             {
                 entity.ToTable("Companies");
@@ -43,6 +51,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.SetNull);
             });
 
+            // Plans
             modelBuilder.Entity<Plan>(entity =>
             {
                 entity.ToTable("Plans");
@@ -57,6 +66,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
+            // PlanSubscriptions
             modelBuilder.Entity<PlanSubscription>(entity =>
             {
                 entity.ToTable("PlanSubscriptions");
@@ -68,6 +78,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
+            // Professionals
             modelBuilder.Entity<Professional>(entity =>
             {
                 entity.ToTable("Professionals");
@@ -83,6 +94,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
+            // Teams
             modelBuilder.Entity<Team>(entity =>
             {
                 entity.ToTable("Teams");
@@ -105,6 +117,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.SetNull);
             });
 
+            // Leaders
             modelBuilder.Entity<Leader>(entity =>
             {
                 entity.ToTable("Leaders");
@@ -121,6 +134,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
+            // Appointments
             modelBuilder.Entity<Appointment>(entity =>
             {
                 entity.ToTable("Appointments");
@@ -152,6 +166,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
+            // Customers
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.ToTable("Customers");
@@ -173,6 +188,7 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.Cascade);
             });
 
+            // CheckRecords
             modelBuilder.Entity<CheckRecord>(entity =>
             {
                 entity.ToTable("CheckRecords");
@@ -195,6 +211,7 @@ namespace Infrastructure
                 entity.Property(c => c.UpdatedDate).HasDefaultValueSql("now()");
             });
 
+            // Recurrences
             modelBuilder.Entity<Recurrence>(entity =>
             {
                 entity.ToTable("Recurrences");
@@ -223,37 +240,25 @@ namespace Infrastructure
                 entity.HasOne(r => r.Team).WithMany().HasForeignKey(r => r.TeamId).OnDelete(DeleteBehavior.SetNull);
             });
 
+            // GpsTrackings
             modelBuilder.Entity<GpsTracking>(entity =>
             {
                 entity.ToTable("GpsTrackings");
                 entity.HasKey(g => g.Id);
-
                 entity.Property(g => g.ProfessionalId).IsRequired();
                 entity.Property(g => g.ProfessionalName);
                 entity.Property(g => g.CompanyId).IsRequired();
                 entity.Property(g => g.CompanyName);
                 entity.Property(g => g.Vehicle).IsRequired();
-
-                // Mapeia Location como owned type
                 entity.OwnsOne(g => g.Location, loc =>
                 {
-                    loc.Property(l => l.Latitude)
-                        .HasColumnName("Latitude")
-                        .IsRequired();
-                    loc.Property(l => l.Longitude)
-                        .HasColumnName("Longitude")
-                        .IsRequired();
-                    loc.Property(l => l.Address)
-                        .HasColumnName("Address");
-                    loc.Property(l => l.Accuracy)
-                        .HasColumnName("Accuracy")
-                        .IsRequired();
+                    loc.Property(l => l.Latitude).HasColumnName("Latitude").IsRequired();
+                    loc.Property(l => l.Longitude).HasColumnName("Longitude").IsRequired();
+                    loc.Property(l => l.Address).HasColumnName("Address");
+                    loc.Property(l => l.Accuracy).HasColumnName("Accuracy").IsRequired();
                 });
-
                 entity.Property(g => g.Speed).IsRequired();
-                entity.Property(g => g.Status)
-                      .HasConversion<int>()
-                      .IsRequired();
+                entity.Property(g => g.Status).HasConversion<int>().IsRequired();
                 entity.Property(g => g.Battery).IsRequired();
                 entity.Property(g => g.Notes);
                 entity.Property(g => g.Timestamp).IsRequired();
@@ -261,12 +266,11 @@ namespace Infrastructure
                 entity.Property(g => g.UpdatedDate).HasDefaultValueSql("now()");
             });
 
-            // Review mapping:
+            // Reviews
             modelBuilder.Entity<Review>(entity =>
             {
                 entity.ToTable("Reviews");
                 entity.HasKey(r => r.Id);
-
                 entity.Property(r => r.CustomerId).IsRequired();
                 entity.Property(r => r.CustomerName);
                 entity.Property(r => r.ProfessionalId);
@@ -280,38 +284,68 @@ namespace Infrastructure
                 entity.Property(r => r.Comment);
                 entity.Property(r => r.Date).IsRequired();
                 entity.Property(r => r.ServiceType).IsRequired();
-                entity.Property(r => r.Status)
-                      .HasConversion<int>()
-                      .IsRequired();
+                entity.Property(r => r.Status).HasConversion<int>().IsRequired();
                 entity.Property(r => r.Response);
                 entity.Property(r => r.ResponseDate);
                 entity.Property(r => r.CreatedDate).HasDefaultValueSql("now()");
                 entity.Property(r => r.UpdatedDate).HasDefaultValueSql("now()");
             });
 
-            base.OnModelCreating(modelBuilder);
-
-
+            // InternalFeedbacks
+            modelBuilder.Entity<InternalFeedback>(entity =>
+            {
+                entity.ToTable("InternalFeedbacks");
+                entity.HasKey(f => f.Id);
+                entity.Property(f => f.Title).IsRequired();
+                entity.Property(f => f.ProfessionalId).IsRequired();
+                entity.Property(f => f.TeamId).IsRequired();
+                entity.Property(f => f.Category).IsRequired();
+                entity.Property(f => f.Status).HasConversion<string>().IsRequired();
+                entity.Property(f => f.Date).IsRequired();
+                entity.Property(f => f.Description);
+                entity.Property(f => f.Priority).HasConversion<string>().IsRequired();
+                entity.Property(f => f.AssignedToId).IsRequired();
+                entity.Property(f => f.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(f => f.UpdatedDate).HasDefaultValueSql("now()");
+                entity.HasMany(f => f.Comments)
+                      .WithOne()
+                      .HasForeignKey(c => c.InternalFeedbackId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
         }
-
-
 
         public override int SaveChanges()
         {
-            var entries = ChangeTracker
-                .Entries()
+            var entries = ChangeTracker.Entries()
                 .Where(e => e.Entity is BaseModel &&
                             (e.State == EntityState.Added || e.State == EntityState.Modified));
 
             foreach (var entry in entries)
             {
-                var entity = (BaseModel)entry.Entity;
-                entity.UpdatedDate = DateTime.UtcNow;
+                var model = (BaseModel)entry.Entity;
+                model.UpdatedDate = DateTime.UtcNow;
                 if (entry.State == EntityState.Added)
-                    entity.CreatedDate = DateTime.UtcNow;
+                    model.CreatedDate = DateTime.UtcNow;
             }
 
             return base.SaveChanges();
+        }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            var entries = ChangeTracker.Entries()
+                .Where(e => e.Entity is BaseModel &&
+                            (e.State == EntityState.Added || e.State == EntityState.Modified));
+
+            foreach (var entry in entries)
+            {
+                var model = (BaseModel)entry.Entity;
+                model.UpdatedDate = DateTime.UtcNow;
+                if (entry.State == EntityState.Added)
+                    model.CreatedDate = DateTime.UtcNow;
+            }
+
+            return base.SaveChangesAsync(cancellationToken);
         }
     }
 }
