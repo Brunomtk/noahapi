@@ -1,5 +1,5 @@
 ﻿using System;
-using Core.Enums;
+using Core.Enums.GpsTracking;
 
 namespace Core.Models
 {

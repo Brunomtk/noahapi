@@ -1,4 +1,4 @@
-﻿using Core.Enums;
+﻿using Core.Enums.Appointment;
 using Core.Models;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;

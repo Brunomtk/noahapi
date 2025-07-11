@@ -1,3 +1,5 @@
+// Infrastructure/ServiceExtension/ServiceExtension.cs
+using Infrastructure;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +16,6 @@ namespace Infrastructure.ServiceExtension
                 options.UseNpgsql(connectionString)
             );
 
-            // Repository registrations
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
             services.AddScoped<IPlanRepository, PlanRepository>();
@@ -28,9 +29,12 @@ namespace Infrastructure.ServiceExtension
             services.AddScoped<IRecurrenceRepository, RecurrenceRepository>();
             services.AddScoped<IGpsTrackingRepository, GpsTrackingRepository>();
             services.AddScoped<IReviewRepository, ReviewRepository>();
-            services.AddScoped<IInternalFeedbackRepository, InternalFeedbackRepository>(); 
+            services.AddScoped<IInternalFeedbackRepository, InternalFeedbackRepository>();
+            services.AddScoped<ICancellationRepository, CancellationRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
+            services.AddScoped<INotificationRepository, NotificationRepository>();
+            services.AddScoped<IMaterialRepository, MaterialRepository>(); 
 
-            // Service registrations
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             return services;

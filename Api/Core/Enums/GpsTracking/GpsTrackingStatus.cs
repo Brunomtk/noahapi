@@ -1,5 +1,4 @@
-﻿
-namespace Core.Enums
+﻿namespace Core.Enums.GpsTracking
 {
     public enum GpsTrackingStatus
     {

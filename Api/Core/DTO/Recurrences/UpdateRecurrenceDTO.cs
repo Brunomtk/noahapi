@@ -1,4 +1,5 @@
 ﻿using Core.Enums;
+using Core.Enums.Recurrence;
 using System;
 
 namespace Core.DTO.Recurrences

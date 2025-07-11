@@ -1,6 +1,6 @@
 ﻿// Core/DTO/GpsTracking/UpdateGpsTrackingDTO.cs
 using System;
-using Core.Enums;
+using Core.Enums.GpsTracking;
 
 namespace Core.DTO.GpsTracking
 {

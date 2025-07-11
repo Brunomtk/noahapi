@@ -1,5 +1,5 @@
 ﻿using Core.DTO.Appointment;
-using Core.Enums;
+using Core.Enums.Appointment;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services;

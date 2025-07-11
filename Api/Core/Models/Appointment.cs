@@ -1,5 +1,4 @@
-﻿using Core.Enums;
-using Core.Enums.Appointment;
+﻿using Core.Enums.Appointment;
 using System;
 
 namespace Core.Models

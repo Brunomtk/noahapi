@@ -1,4 +1,4 @@
-﻿namespace Core.Enums
+﻿namespace Core.Enums.Appointment
 {
     public enum AppointmentStatus
     {

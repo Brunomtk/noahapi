@@ -1,10 +1,35 @@
-﻿using System;
+﻿// Infrastructure/Repositories/UnitOfWork.cs
+using System;
 using System.Threading.Tasks;
-using Infrastructure.Repositories;
 using Core.Models;
 
 namespace Infrastructure.Repositories
 {
+    public interface IUnitOfWork : IDisposable
+    {
+        IUserRepository Users { get; }
+        ICompanyRepository Companies { get; }
+        IPlanRepository Plans { get; }
+        IPlanSubscriptionRepository PlanSubscriptions { get; }
+        IProfessionalRepository Professionals { get; }
+        ITeamRepository Teams { get; }
+        ILeaderRepository Leaders { get; }
+        IAppointmentRepository Appointments { get; }
+        ICustomerRepository Customers { get; }
+        ICheckRecordRepository CheckRecords { get; }
+        IRecurrenceRepository Recurrences { get; }
+        IGpsTrackingRepository GpsTrackings { get; }
+        IReviewRepository Reviews { get; }
+        IInternalFeedbackRepository InternalFeedbacks { get; }
+        ICancellationRepository Cancellations { get; }
+        IPaymentRepository Payments { get; }
+        INotificationRepository Notifications { get; }
+        IMaterialRepository Materials { get; }
+
+        int Save();
+        Task<int> SaveAsync();
+    }
+
     public class UnitOfWork : IUnitOfWork
     {
         private readonly DbContextClass _dbContext;
@@ -23,6 +48,10 @@ namespace Infrastructure.Repositories
         public IGpsTrackingRepository GpsTrackings { get; }
         public IReviewRepository Reviews { get; }
         public IInternalFeedbackRepository InternalFeedbacks { get; }
+        public ICancellationRepository Cancellations { get; }
+        public IPaymentRepository Payments { get; }
+        public INotificationRepository Notifications { get; }
+        public IMaterialRepository Materials { get; }
 
         public UnitOfWork(
             DbContextClass dbContext,
@@ -39,10 +68,15 @@ namespace Infrastructure.Repositories
             IRecurrenceRepository recurrenceRepository,
             IGpsTrackingRepository gpsTrackingRepository,
             IReviewRepository reviewRepository,
-            IInternalFeedbackRepository internalFeedbackRepository
+            IInternalFeedbackRepository internalFeedbackRepository,
+            ICancellationRepository cancellationRepository,
+            IPaymentRepository paymentRepository,
+            INotificationRepository notificationRepository,
+            IMaterialRepository materialRepository
         )
         {
             _dbContext = dbContext;
+
             Users = userRepository;
             Companies = companyRepository;
             Plans = planRepository;
@@ -57,45 +91,20 @@ namespace Infrastructure.Repositories
             GpsTrackings = gpsTrackingRepository;
             Reviews = reviewRepository;
             InternalFeedbacks = internalFeedbackRepository;
+            Cancellations = cancellationRepository;
+            Payments = paymentRepository;
+            Notifications = notificationRepository;
+            Materials = materialRepository;
         }
 
-        public int Save()
-            => _dbContext.SaveChanges();
+        public int Save() => _dbContext.SaveChanges();
 
-        public Task<int> SaveAsync()
-            => _dbContext.SaveChangesAsync();
+        public Task<int> SaveAsync() => _dbContext.SaveChangesAsync();
 
         public void Dispose()
         {
-            Dispose(true);
+            _dbContext.Dispose();
             GC.SuppressFinalize(this);
         }
-
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-                _dbContext.Dispose();
-        }
-    }
-
-    public interface IUnitOfWork : IDisposable
-    {
-        IUserRepository Users { get; }
-        ICompanyRepository Companies { get; }
-        IPlanRepository Plans { get; }
-        IPlanSubscriptionRepository PlanSubscriptions { get; }
-        IProfessionalRepository Professionals { get; }
-        ITeamRepository Teams { get; }
-        ILeaderRepository Leaders { get; }
-        IAppointmentRepository Appointments { get; }
-        ICustomerRepository Customers { get; }
-        ICheckRecordRepository CheckRecords { get; }
-        IRecurrenceRepository Recurrences { get; }
-        IGpsTrackingRepository GpsTrackings { get; }
-        IReviewRepository Reviews { get; }
-        IInternalFeedbackRepository InternalFeedbacks { get; }
-
-        int Save();
-        Task<int> SaveAsync();
     }
 }

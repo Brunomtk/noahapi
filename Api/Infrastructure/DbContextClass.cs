@@ -28,6 +28,11 @@ namespace Infrastructure
         public DbSet<GpsTracking> GpsTrackings { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<InternalFeedback> InternalFeedbacks { get; set; }
+        public DbSet<Cancellation> Cancellations { get; set; }
+        public DbSet<Payment> Payments { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Material> Materials { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -235,9 +240,18 @@ namespace Infrastructure
                 entity.Property(r => r.NextExecution);
                 entity.Property(r => r.CreatedDate).HasDefaultValueSql("now()");
                 entity.Property(r => r.UpdatedDate).HasDefaultValueSql("now()");
-                entity.HasOne(r => r.Company).WithMany().HasForeignKey(r => r.CompanyId).OnDelete(DeleteBehavior.Restrict);
-                entity.HasOne(r => r.Customer).WithMany().HasForeignKey(r => r.CustomerId).OnDelete(DeleteBehavior.Restrict);
-                entity.HasOne(r => r.Team).WithMany().HasForeignKey(r => r.TeamId).OnDelete(DeleteBehavior.SetNull);
+                entity.HasOne(r => r.Company)
+                      .WithMany()
+                      .HasForeignKey(r => r.CompanyId)
+                      .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(r => r.Customer)
+                      .WithMany()
+                      .HasForeignKey(r => r.CustomerId)
+                      .OnDelete(DeleteBehavior.Restrict);
+                entity.HasOne(r => r.Team)
+                      .WithMany()
+                      .HasForeignKey(r => r.TeamId)
+                      .OnDelete(DeleteBehavior.SetNull);
             });
 
             // GpsTrackings
@@ -311,6 +325,90 @@ namespace Infrastructure
                       .WithOne()
                       .HasForeignKey(c => c.InternalFeedbackId)
                       .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            // Cancellations
+            modelBuilder.Entity<Cancellation>(entity =>
+            {
+                entity.ToTable("Cancellations");
+                entity.HasKey(c => c.Id);
+                entity.Property(c => c.AppointmentId).IsRequired();
+                entity.Property(c => c.CustomerId).IsRequired();
+                entity.Property(c => c.CustomerName);
+                entity.Property(c => c.CompanyId).IsRequired();
+                entity.Property(c => c.Reason).IsRequired();
+                entity.Property(c => c.CancelledById).IsRequired();
+                entity.Property(c => c.CancelledByRole).HasConversion<string>().IsRequired();
+                entity.Property(c => c.CancelledAt).IsRequired();
+                entity.Property(c => c.RefundStatus);
+                entity.Property(c => c.Notes);
+                entity.Property(c => c.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(c => c.UpdatedDate).HasDefaultValueSql("now()");
+            });
+
+            // Payments
+            modelBuilder.Entity<Payment>(entity =>
+            {
+                entity.ToTable("Payments");
+                entity.HasKey(p => p.Id);
+                entity.Property(p => p.CompanyId).IsRequired();
+                entity.Property(p => p.CompanyName);
+                entity.Property(p => p.Amount).HasPrecision(18, 2);
+                entity.Property(p => p.DueDate).IsRequired();
+                entity.Property(p => p.PaymentDate);
+                entity.Property(p => p.Status).HasConversion<string>().IsRequired();
+                entity.Property(p => p.Method).HasConversion<string>();
+                entity.Property(p => p.Reference).IsRequired();
+                entity.Property(p => p.PlanId).IsRequired();
+                entity.Property(p => p.PlanName);
+                entity.Property(p => p.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(p => p.UpdatedDate).HasDefaultValueSql("now()");
+            });
+
+            // Notifications
+            modelBuilder.Entity<Notification>(entity =>
+            {
+                entity.ToTable("Notifications");
+                entity.HasKey(n => n.Id);
+                entity.Property(n => n.Title).IsRequired();
+                entity.Property(n => n.Message).IsRequired();
+                entity.Property(n => n.Type).HasConversion<string>().IsRequired();
+                entity.Property(n => n.RecipientId).IsRequired();
+                entity.Property(n => n.RecipientRole).HasConversion<string>().IsRequired();
+                entity.Property(n => n.CompanyId);
+                entity.Property(n => n.Status).HasConversion<string>().IsRequired();
+                entity.Property(n => n.SentAt).IsRequired();
+                entity.Property(n => n.ReadAt);
+                entity.Property(n => n.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(n => n.UpdatedDate).HasDefaultValueSql("now()");
+            });
+
+            // Materials
+            modelBuilder.Entity<Material>(entity =>
+            {
+                entity.ToTable("Materials");
+                entity.HasKey(m => m.Id);
+                entity.Property(m => m.Name).IsRequired();
+                entity.Property(m => m.Description);
+                entity.Property(m => m.Category).IsRequired();
+                entity.Property(m => m.Unit).IsRequired();
+                entity.Property(m => m.CurrentStock).IsRequired();
+                entity.Property(m => m.MinStock).IsRequired();
+                entity.Property(m => m.MaxStock);
+                entity.Property(m => m.UnitPrice).HasPrecision(18, 2).IsRequired();
+                entity.Property(m => m.Supplier);
+                entity.Property(m => m.SupplierContact);
+                entity.Property(m => m.Barcode);
+                entity.Property(m => m.Location);
+                entity.Property(m => m.ExpirationDate);
+                entity.Property(m => m.Status).HasConversion<string>().IsRequired();
+                entity.Property(m => m.CompanyId).IsRequired();
+                entity.HasOne<Company>()
+                      .WithMany()
+                      .HasForeignKey(m => m.CompanyId)
+                      .OnDelete(DeleteBehavior.Cascade);
+                entity.Property(m => m.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(m => m.UpdatedDate).HasDefaultValueSql("now()");
             });
         }
 

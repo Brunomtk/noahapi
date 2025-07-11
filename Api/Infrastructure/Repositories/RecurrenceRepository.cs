@@ -1,5 +1,5 @@
 ﻿using Core.DTO.Recurrences;
-using Core.Enums;
+using Core.Enums.Recurrence;
 using Core.Models;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
