@@ -1,10 +1,14 @@
-﻿using Core.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using Infrastructure.ServiceExtension;
-using Core.DTO;
 using Core.Enums;
+using Core.Enums.Team;
+using Core.Models;
+using Core.DTO;
+using Core.DTO.Teams;
+using Core.DTO;
+using Core.DTO.Company;
 
 namespace Infrastructure.Repositories
 {

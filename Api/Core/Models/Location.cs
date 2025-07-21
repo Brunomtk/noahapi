@@ -1,4 +1,10 @@
 ﻿// Core/Models/Location.cs
+
+// Core/Models/Location.cs
+
+// Core/Models/Location.cs
+
+// Core/Models/Location.cs
 using Core.Enums;
 
 namespace Core.Models

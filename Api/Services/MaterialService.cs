@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using Core.DTO.Materials;
-using Core.Enums;
+using Core.Enums.Material;
 using Core.Models;
 using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;

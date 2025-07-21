@@ -2,12 +2,12 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Core.Models;
 using Core.DTO.Review;
 using Core.Enums;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.Repositories;
+using Core.Models;
 
 namespace Infrastructure.Repositories
 {

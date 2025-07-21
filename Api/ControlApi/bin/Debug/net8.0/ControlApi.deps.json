@@ -1973,7 +1973,10 @@
           "itextsharp.xmlworker": "5.5.13.4"
         },
         "runtime": {
-          "Core.dll": {}
+          "Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Infrastructure/1.0.0": {
@@ -2004,7 +2007,10 @@
           "itextsharp.xmlworker": "5.5.13.4"
         },
         "runtime": {
-          "Infrastructure.dll": {}
+          "Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Services/1.0.0": {
@@ -2035,7 +2041,10 @@
           "itextsharp.xmlworker": "5.5.13.4"
         },
         "runtime": {
-          "Services.dll": {}
+          "Services.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -1,9 +1,9 @@
-using Core.Models;
 using Core;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Core.Models;
 
 namespace Infrastructure.Repositories
 {

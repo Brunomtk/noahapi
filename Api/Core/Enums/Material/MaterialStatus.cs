@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Enums
+namespace Core.Enums.Material
 {
-    public enum MaterialOrderPriority
+    public enum MaterialStatus
     {
-        Low,
-        Medium,
-        High,
-        Urgent
+        Active,
+        Inactive,
+        Discontinued
     }
 }
-

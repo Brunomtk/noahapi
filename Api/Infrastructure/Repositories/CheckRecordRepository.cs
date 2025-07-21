@@ -1,5 +1,4 @@
-﻿using Core.Models;
-using Infrastructure.ServiceExtension;
+﻿using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -7,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Core.DTO.CheckRecord;
 using Core.Enums.CheckRecord;
+using Core.Models;
 
 namespace Infrastructure.Repositories
 {

@@ -36,7 +36,8 @@ builder.Services.AddScoped<IInternalFeedbackService, InternalFeedbackService>();
 builder.Services.AddScoped<ICancellationService, CancellationService>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
-builder.Services.AddScoped<IMaterialService, MaterialService>(); 
+builder.Services.AddScoped<IMaterialService, MaterialService>();
+builder.Services.AddScoped<IInternalReportService, InternalReportService>();
 
 // JWT authentication configuration
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

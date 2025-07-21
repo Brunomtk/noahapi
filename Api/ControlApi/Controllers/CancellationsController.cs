@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Core.DTO.Cancellation;
-using Core.Models;
 using Infrastructure.ServiceExtension;  // <-- para o PagedResult<T>
 using Services;
+using Core.Models;
 
 namespace ControlApi.Controllers
 {

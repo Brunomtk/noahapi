@@ -1,7 +1,9 @@
-﻿using Core.DTO;
-using Core.Models;
+﻿using Core.DTO.User;
+using Core.DTO;
+using Core.Enums;
 using Microsoft.EntityFrameworkCore;
-using Infrastructure.ServiceExtension; // ✅ Necessário para GetPagedAsync e PagedResult
+using Infrastructure.ServiceExtension;
+using Core.Models; // ✅ Necessário para GetPagedAsync e PagedResult
 
 namespace Infrastructure.Repositories
 {

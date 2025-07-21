@@ -1,5 +1,6 @@
 ﻿using System;
 using Core.Enums;
+using Core.Enums.Material;
 
 namespace Core.Models
 {

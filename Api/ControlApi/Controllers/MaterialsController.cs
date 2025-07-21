@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Core.DTO.Materials;
-using Core.Models;
 using Infrastructure.ServiceExtension;
 using Services;
+using Core.Models;
 
 namespace ControlApi.Controllers
 {

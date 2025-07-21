@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Core.DTO.Review;
-using Core.Models;
 using Infrastructure.ServiceExtension;
 using Infrastructure.Repositories;
+using Core.Models;
 
 namespace Services
 {

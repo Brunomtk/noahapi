@@ -1,7 +1,7 @@
 ﻿using Core.DTO;
-using Core.Models;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.ServiceExtension;
+using Core.Models;
 
 namespace Infrastructure.Repositories
 {

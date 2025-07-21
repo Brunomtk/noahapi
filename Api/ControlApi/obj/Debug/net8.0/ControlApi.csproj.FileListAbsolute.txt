@@ -593,11 +593,6 @@ C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\C
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.sourcelink.json
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets\msbuild.ControlApi.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets\msbuild.build.ControlApi.props
-C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ControlApi.props
-C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ControlApi.props
-C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\scopedcss\bundle\ControlApi.styles.css
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.csproj.Up2Date
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.dll
@@ -605,3 +600,11 @@ C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\C
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.pdb
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.genruntimeconfig.cache
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ref\ControlApi.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\bin\Debug\net8.0\ControlApi.staticwebassets.endpoints.json
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

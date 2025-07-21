@@ -1,12 +1,12 @@
 using Core.DTO.Professional;
 using Core.Enums;
 using Core;
-using Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq; // ? Necessário para usar ToList()
 using Infrastructure.Repositories;
+using Core.Models;
 
 namespace Services
 {

@@ -469,6 +469,114 @@ namespace Infrastructure.Migrations
                     b.ToTable("InternalFeedbackComment");
                 });
 
+            modelBuilder.Entity("Core.Models.InternalReport", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("AssignedTo")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("AssignedToId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Priority")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Professional")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ProfessionalId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Team")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("TeamId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("InternalReports");
+                });
+
+            modelBuilder.Entity("Core.Models.InternalReportComment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<string>("AuthorId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone")
+                        .HasDefaultValueSql("now()");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("InternalReportId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("timestamp with time zone")
+                        .HasDefaultValueSql("now()");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("InternalReportId");
+
+                    b.ToTable("InternalReportComments", (string)null);
+                });
+
             modelBuilder.Entity("Core.Models.Leader", b =>
                 {
                     b.Property<int>("Id")
@@ -1348,6 +1456,17 @@ namespace Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Core.Models.InternalReportComment", b =>
+                {
+                    b.HasOne("Core.Models.InternalReport", "InternalReport")
+                        .WithMany("Comments")
+                        .HasForeignKey("InternalReportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("InternalReport");
+                });
+
             modelBuilder.Entity("Core.Models.Leader", b =>
                 {
                     b.HasOne("Core.Models.User", "User")
@@ -1511,6 +1630,11 @@ namespace Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("Core.Models.InternalFeedback", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("Core.Models.InternalReport", b =>
                 {
                     b.Navigation("Comments");
                 });

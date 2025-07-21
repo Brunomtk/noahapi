@@ -1,8 +1,8 @@
 ﻿using Core.DTO;
-using Core.Models;
 using Core.Enums;
 using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;
+using Core.Models;
 
 namespace Services
 {

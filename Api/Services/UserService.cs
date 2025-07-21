@@ -1,10 +1,10 @@
-﻿using Core.DTO;
-using Core.Models;
-using Core.Enums;
+﻿using Core.Enums.User;
 using Infrastructure.Repositories;
 using Infrastructure.Security;
 using Infrastructure.ServiceExtension;
-using Core.DTO.User; // ✅ IMPORTANTE para PagedResult<User>
+using Core.DTO.User;
+using Core.DTO;
+using Core.Models; // ✅ IMPORTANTE para PagedResult<User>
 
 namespace Services
 {

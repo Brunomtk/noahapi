@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Core.DTO;
-using Core.Models;
 using Services;
 using Core.DTO.Company;
+using Core.Models;
 
 namespace Api.Controllers
 {

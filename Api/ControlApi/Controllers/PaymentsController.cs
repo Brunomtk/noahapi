@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Services;
 using Core.DTO.Payments;
-using Core.Models;
 using Infrastructure.ServiceExtension;
+using Core.Models;
 
 namespace ControlApi.Controllers
 {

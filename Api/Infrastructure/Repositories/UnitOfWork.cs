@@ -25,6 +25,7 @@ namespace Infrastructure.Repositories
         IPaymentRepository Payments { get; }
         INotificationRepository Notifications { get; }
         IMaterialRepository Materials { get; }
+        IInternalReportRepository InternalReports { get; }
 
         int Save();
         Task<int> SaveAsync();
@@ -52,6 +53,7 @@ namespace Infrastructure.Repositories
         public IPaymentRepository Payments { get; }
         public INotificationRepository Notifications { get; }
         public IMaterialRepository Materials { get; }
+        public IInternalReportRepository InternalReports { get; }
 
         public UnitOfWork(
             DbContextClass dbContext,
@@ -72,7 +74,8 @@ namespace Infrastructure.Repositories
             ICancellationRepository cancellationRepository,
             IPaymentRepository paymentRepository,
             INotificationRepository notificationRepository,
-            IMaterialRepository materialRepository
+            IMaterialRepository materialRepository,
+            IInternalReportRepository internalReportRepository
         )
         {
             _dbContext = dbContext;
@@ -95,6 +98,7 @@ namespace Infrastructure.Repositories
             Payments = paymentRepository;
             Notifications = notificationRepository;
             Materials = materialRepository;
+            InternalReports = internalReportRepository;
         }
 
         public int Save() => _dbContext.SaveChanges();

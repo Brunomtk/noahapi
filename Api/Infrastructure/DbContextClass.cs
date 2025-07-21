@@ -32,7 +32,8 @@ namespace Infrastructure
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Material> Materials { get; set; }
-
+        public DbSet<InternalReport> InternalReports { get; set; }
+        public DbSet<InternalReportComment> InternalReportComments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -409,6 +410,19 @@ namespace Infrastructure
                       .OnDelete(DeleteBehavior.Cascade);
                 entity.Property(m => m.CreatedDate).HasDefaultValueSql("now()");
                 entity.Property(m => m.UpdatedDate).HasDefaultValueSql("now()");
+            });
+            // InternalReportComments
+            modelBuilder.Entity<InternalReportComment>(entity =>
+            {
+                entity.ToTable("InternalReportComments");
+                entity.HasKey(c => c.Id);
+                entity.Property(c => c.InternalReportId).IsRequired();
+                entity.Property(c => c.AuthorId).IsRequired();
+                entity.Property(c => c.Author).HasMaxLength(200).IsRequired();
+                entity.Property(c => c.Date).IsRequired();
+                entity.Property(c => c.Text).IsRequired();
+                entity.Property(c => c.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(c => c.UpdatedDate).HasDefaultValueSql("now()");
             });
         }
 
