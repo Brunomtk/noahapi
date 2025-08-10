@@ -37,6 +37,9 @@ namespace ControlApi.Controllers
                 : NotFound("Review not found");
         }
 
+        /// <summary>
+        /// Lista paginada de avaliações com filtros opcionais.
+        /// </summary>
         [HttpGet("paged")]
         public async Task<IActionResult> GetPaged([FromQuery] ReviewFiltersDTO filters)
         {
@@ -72,6 +75,9 @@ namespace ControlApi.Controllers
                 : NotFound("Review not found");
         }
 
+        /// <summary>
+        /// Registra uma resposta à avaliação.
+        /// </summary>
         [HttpPost("{id:int}/response")]
         public async Task<IActionResult> Respond(int id, [FromBody] string response)
         {

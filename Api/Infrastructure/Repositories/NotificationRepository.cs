@@ -43,6 +43,17 @@ namespace Infrastructure.Repositories
                     n.Message.ToLower().Contains(s));
             }
 
+            // Filtros adicionais por ID
+            if (filters.RecipientId.HasValue)
+            {
+                query = query.Where(n => n.RecipientId == filters.RecipientId.Value);
+            }
+
+            if (filters.CompanyId.HasValue)
+            {
+                query = query.Where(n => n.CompanyId == filters.CompanyId.Value);
+            }
+
             return await query.ToListAsync();
         }
 

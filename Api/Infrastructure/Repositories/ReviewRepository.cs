@@ -1,13 +1,11 @@
-﻿// Infrastructure/Repositories/ReviewRepository.cs
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.DTO.Review;
 using Core.Enums;
+using Core.Models;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
-using Infrastructure.Repositories;
-using Core.Models;
 
 namespace Infrastructure.Repositories
 {
@@ -21,13 +19,14 @@ namespace Infrastructure.Repositories
         public async Task<Review?> GetByIdAsync(int id)
         {
             return await _context.Reviews
-                .FirstOrDefaultAsync(r => r.Id == id);      // agora r.Id (int) == id (int)
+                .FirstOrDefaultAsync(r => r.Id == id);
         }
 
         public async Task<PagedResult<Review>> GetPagedAsync(ReviewFiltersDTO filters)
         {
             var q = _context.Reviews.AsQueryable();
 
+            // Filtros por status e rating
             if (!string.IsNullOrWhiteSpace(filters.Status)
                 && !filters.Status.Equals("all", StringComparison.OrdinalIgnoreCase)
                 && Enum.TryParse<ReviewStatus>(filters.Status, true, out var statusEnum))
@@ -42,6 +41,7 @@ namespace Infrastructure.Repositories
                 q = q.Where(x => x.Rating == ratingValue);
             }
 
+            // Filtro por busca textual
             if (!string.IsNullOrWhiteSpace(filters.SearchQuery))
             {
                 var txt = filters.SearchQuery.ToLower();
@@ -53,15 +53,32 @@ namespace Infrastructure.Repositories
                 );
             }
 
+            // Filtros por IDs
+            if (!string.IsNullOrWhiteSpace(filters.CustomerId))
+                q = q.Where(x => x.CustomerId == filters.CustomerId);
+
+            if (!string.IsNullOrWhiteSpace(filters.ProfessionalId))
+                q = q.Where(x => x.ProfessionalId == filters.ProfessionalId);
+
+            if (!string.IsNullOrWhiteSpace(filters.TeamId))
+                q = q.Where(x => x.TeamId == filters.TeamId);
+
+            if (!string.IsNullOrWhiteSpace(filters.CompanyId))
+                q = q.Where(x => x.CompanyId == filters.CompanyId);
+
+            if (!string.IsNullOrWhiteSpace(filters.AppointmentId))
+                q = q.Where(x => x.AppointmentId == filters.AppointmentId);
+
+            // Ordenação e paginação
             return await q
                 .OrderByDescending(x => x.CreatedDate)
                 .GetPagedAsync(filters.PageNumber, filters.PageSize);
         }
     }
-}
 
-public interface IReviewRepository : IGenericRepository<Review>
-{
-    Task<Review?> GetByIdAsync(int id);                // id agora é int
-    Task<PagedResult<Review>> GetPagedAsync(ReviewFiltersDTO filters);
+    public interface IReviewRepository : IGenericRepository<Review>
+    {
+        Task<Review?> GetByIdAsync(int id);
+        Task<PagedResult<Review>> GetPagedAsync(ReviewFiltersDTO filters);
+    }
 }

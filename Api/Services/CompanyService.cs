@@ -1,9 +1,10 @@
 ﻿using Core.DTO;
 using Core.DTO.Company;
-using Core.Enums;
 using Core.Models;
 using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Services
 {
@@ -30,15 +31,10 @@ namespace Services
             return await _unitOfWork.Companies.GetAll();
         }
 
-        public async Task<PagedResult<Company>> GetAllCompaniesPaged(FiltersDTO filtersDTO)
-        {
-            return await _unitOfWork.Companies.GetAllCompaniesPaged(filtersDTO);
-        }
-
         public async Task<Company?> GetCompanyById(int companyId)
         {
             if (companyId <= 0) return null;
-            return await _unitOfWork.Companies.GetById(companyId);
+            return await _unitOfWork.Companies.GetByIdAsync(companyId);
         }
 
         public async Task<Company?> GetCompanyByCnpj(string cnpj)
@@ -47,9 +43,19 @@ namespace Services
             return await _unitOfWork.Companies.GetByCnpj(cnpj);
         }
 
+        public async Task<PagedResult<Company>> GetCompaniesPagedFilteredAsync(CompanyFiltersDTO filters)
+        {
+            return await _unitOfWork.Companies.GetCompaniesPagedFilteredAsync(filters);
+        }
+
+        public async Task<int?> GetPlanIdByCompanyId(int companyId)
+        {
+            return await _unitOfWork.Companies.GetPlanIdByCompanyId(companyId);
+        }
+
         public async Task<bool> UpdateCompany(CreateCompanyRequest request, int companyId)
         {
-            var company = await _unitOfWork.Companies.GetById(companyId);
+            var company = await _unitOfWork.Companies.GetByIdAsync(companyId);
             if (company == null) return false;
 
             company.Name = request.Name;
@@ -67,7 +73,7 @@ namespace Services
 
         public async Task<bool> DeleteCompany(int companyId)
         {
-            var company = await _unitOfWork.Companies.GetById(companyId);
+            var company = await _unitOfWork.Companies.GetByIdAsync(companyId);
             if (company == null) return false;
 
             _unitOfWork.Companies.Delete(company);
@@ -80,9 +86,10 @@ namespace Services
     {
         Task<bool> CreateCompany(Company company);
         Task<IEnumerable<Company>> GetAllCompanies();
-        Task<PagedResult<Company>> GetAllCompaniesPaged(FiltersDTO filtersDTO);
         Task<Company?> GetCompanyById(int companyId);
         Task<Company?> GetCompanyByCnpj(string cnpj);
+        Task<PagedResult<Company>> GetCompaniesPagedFilteredAsync(CompanyFiltersDTO filters);
+        Task<int?> GetPlanIdByCompanyId(int companyId);
         Task<bool> UpdateCompany(CreateCompanyRequest request, int companyId);
         Task<bool> DeleteCompany(int companyId);
     }

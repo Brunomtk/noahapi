@@ -1,8 +1,6 @@
-﻿using Core.Enums;
-using Core.Enums.Team;
+﻿using Core.DTO.Teams;
+using Core.Enums;
 using Core.Models;
-using Core.DTO;
-using Core.DTO.Teams;
 using Infrastructure.Repositories;
 using Infrastructure.ServiceExtension;
 using System;
@@ -22,6 +20,11 @@ namespace Services
         public async Task<PagedResult<Team>> GetPagedTeams(int page, int pageSize, string status = "all", string? search = null)
         {
             return await _unitOfWork.Teams.GetPagedTeams(page, pageSize, status, search);
+        }
+
+        public async Task<PagedResult<Team>> GetPagedTeams(TeamFiltersDTO filters)
+        {
+            return await _unitOfWork.Teams.GetPagedTeamsFilteredAsync(filters);
         }
 
         public async Task<Team?> GetByIdAsync(int id)
@@ -67,6 +70,7 @@ namespace Services
     public interface ITeamService
     {
         Task<PagedResult<Team>> GetPagedTeams(int page, int pageSize, string status = "all", string? search = null);
+        Task<PagedResult<Team>> GetPagedTeams(TeamFiltersDTO filters);
         Task<Team?> GetByIdAsync(int id);
         Task<Team> CreateAsync(Team team);
         Task<Team?> UpdateAsync(int id, Team teamData);

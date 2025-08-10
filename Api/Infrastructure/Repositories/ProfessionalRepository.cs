@@ -1,9 +1,10 @@
-using Core;
-using Infrastructure.Repositories;
+using Core.DTO.Professional;
+using Core.Models;
+using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using Core.Models;
 
 namespace Infrastructure.Repositories
 {
@@ -29,10 +30,34 @@ namespace Infrastructure.Repositories
                 .AsNoTracking()
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
+
+        public async Task<PagedResult<Professional>> GetPagedProfessionalsAsync(ProfessionalFiltersDTO filters)
+        {
+            var query = _dbContext.Professionals
+                .AsNoTracking()
+                .AsQueryable();
+
+            if (filters.CompanyId.HasValue)
+                query = query.Where(p => p.CompanyId == filters.CompanyId.Value);
+
+            if (filters.TeamId.HasValue)
+                query = query.Where(p => p.TeamId == filters.TeamId.Value);
+
+            if (filters.LeaderId.HasValue)
+            {
+                query = query.Where(p =>
+                    _dbContext.Teams.Any(t => t.Id == p.TeamId && t.LeaderId == filters.LeaderId.Value)
+                );
+            }
+
+            return await query.GetPagedAsync(filters.Page, filters.PageSize);
+        }
     }
-}
-public interface IProfessionalRepository : IGenericRepository<Professional>
-{
-    Task<List<Professional>> GetAllAsync();
-    Task<Professional?> GetByIdAsync(int id);
+
+    public interface IProfessionalRepository : IGenericRepository<Professional>
+    {
+        Task<List<Professional>> GetAllAsync();
+        Task<Professional?> GetByIdAsync(int id);
+        Task<PagedResult<Professional>> GetPagedProfessionalsAsync(ProfessionalFiltersDTO filters);
+    }
 }

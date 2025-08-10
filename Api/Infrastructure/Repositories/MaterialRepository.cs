@@ -23,10 +23,12 @@ namespace Infrastructure.Repositories
         {
             var query = _dbContext.Materials.AsQueryable();
 
+            if (filters.CompanyId.HasValue)
+                query = query.Where(m => m.CompanyId == filters.CompanyId.Value);
+
             if (!string.IsNullOrWhiteSpace(filters.Category))
                 query = query.Where(m => m.Category == filters.Category);
 
-            // Ajuste: converte filters.Status (string) para enum MaterialStatus
             if (!string.IsNullOrWhiteSpace(filters.Status) && !filters.Status.Equals("all", StringComparison.OrdinalIgnoreCase))
             {
                 if (Enum.TryParse<MaterialStatus>(filters.Status, true, out var statusEnum))

@@ -1,5 +1,4 @@
 ﻿using Core.DTO.Appointment;
-using Core.Enums.Appointment;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services;
@@ -19,16 +18,12 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Lista agendamentos com paginação e filtros opcionais.
+        /// Lista agendamentos com paginação e filtros diversos (companyId, customerId, status, etc).
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> GetPaged(
-            [FromQuery] int page = 1,
-            [FromQuery] int pageSize = 10,
-            [FromQuery] AppointmentStatus? status = null,
-            [FromQuery] string? search = null)
+        public async Task<IActionResult> GetPaged([FromQuery] AppointmentFiltersDTO filters)
         {
-            var result = await _appointmentService.GetPagedAppointments(page, pageSize, status, search);
+            var result = await _appointmentService.GetPagedAppointments(filters);
             return Ok(result);
         }
 

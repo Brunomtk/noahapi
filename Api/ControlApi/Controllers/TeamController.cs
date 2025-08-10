@@ -1,8 +1,6 @@
-﻿using Core.Enums;
-using Core.Enums.Team;
+﻿using Core.DTO.Teams;
+using Core.Enums;
 using Core.Models;
-using Core.DTO;
-using Core.DTO.Teams;
 using Infrastructure.ServiceExtension;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +21,7 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Lista times com paginação, filtro por status e busca por nome.
+        /// Returns paged teams with optional status and name search.
         /// </summary>
         [HttpGet]
         public async Task<IActionResult> GetPaged(
@@ -37,7 +35,17 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Retorna um time pelo ID.
+        /// Returns paged teams with filters: companyId, leaderId, status, search.
+        /// </summary>
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetPagedFiltered([FromQuery] TeamFiltersDTO filters)
+        {
+            var result = await _teamService.GetPagedTeams(filters);
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// Returns a team by ID.
         /// </summary>
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
@@ -48,7 +56,7 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Cria um novo time.
+        /// Creates a new team.
         /// </summary>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateTeamDTO dto)
@@ -60,7 +68,7 @@ namespace ControlApi.Controllers
                 Region = dto.Region,
                 Description = dto.Description,
                 CompanyId = dto.CompanyId,
-                Status = Core.Enums.StatusEnum.Active,
+                Status = StatusEnum.Active,
                 Rating = 0,
                 CompletedServices = 0,
             };
@@ -70,7 +78,7 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Atualiza um time existente.
+        /// Updates an existing team.
         /// </summary>
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] Team updatedTeam)
@@ -81,7 +89,7 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Deleta um time.
+        /// Deletes a team by ID.
         /// </summary>
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)

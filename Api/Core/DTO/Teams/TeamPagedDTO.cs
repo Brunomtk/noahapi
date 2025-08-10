@@ -1,11 +1,13 @@
-using System.Collections.Generic;
-
 namespace Core.DTO.Teams
 {
-    public class TeamPagedDTO
+    public class TeamFiltersDTO
     {
-        public int PageCount { get; set; }
-        public int TotalItems { get; set; }
-        public List<TeamDTO> Data { get; set; } = new();
+        public int? CompanyId { get; set; }
+        public int? LeaderId { get; set; }
+        public string? Status { get; set; } = "all";
+        public string? Search { get; set; }
+
+        public int Page { get; set; } = 1;
+        public int PageSize { get; set; } = 10;
     }
 }

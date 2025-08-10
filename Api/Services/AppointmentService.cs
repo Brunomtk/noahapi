@@ -1,5 +1,4 @@
-﻿using Core.DTO;
-using Core.DTO.Appointment;
+﻿using Core.DTO.Appointment;
 using Core.Enums.Appointment;
 using Core.Models;
 using Infrastructure.Repositories;
@@ -16,9 +15,9 @@ namespace Services
             _unitOfWork = unitOfWork;
         }
 
-        public async Task<PagedResult<Appointment>> GetPagedAppointments(int page, int pageSize, AppointmentStatus? status, string? search)
+        public async Task<PagedResult<Appointment>> GetPagedAppointments(AppointmentFiltersDTO filters)
         {
-            return await _unitOfWork.Appointments.GetPagedAppointmentsAsync(page, pageSize, status, search);
+            return await _unitOfWork.Appointments.GetPagedAppointmentsAsync(filters);
         }
 
         public async Task<List<Appointment>> GetByCompany(int companyId)
@@ -105,7 +104,7 @@ namespace Services
 
     public interface IAppointmentService
     {
-        Task<PagedResult<Appointment>> GetPagedAppointments(int page, int pageSize, AppointmentStatus? status, string? search);
+        Task<PagedResult<Appointment>> GetPagedAppointments(AppointmentFiltersDTO filters);
         Task<List<Appointment>> GetByCompany(int companyId);
         Task<List<Appointment>> GetByTeam(int teamId);
         Task<List<Appointment>> GetByProfessional(int professionalId);

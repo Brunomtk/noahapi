@@ -1,12 +1,13 @@
 using Core.DTO.Professional;
 using Core.Enums;
-using Core;
+using Core.Models;
+using Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
-using System.Linq; // ? Necessário para usar ToList()
-using Infrastructure.Repositories;
-using Core.Models;
+using Infrastructure.ServiceExtension;
+
 
 namespace Services
 {
@@ -21,7 +22,7 @@ namespace Services
 
         public async Task<List<Professional>> GetAllProfessionals()
         {
-            return (await _unitOfWork.Professionals.GetAll()).ToList(); // ? Corrigido
+            return (await _unitOfWork.Professionals.GetAll()).ToList();
         }
 
         public async Task<Professional?> GetProfessionalById(int id)
@@ -79,6 +80,11 @@ namespace Services
 
             return true;
         }
+
+        public async Task<PagedResult<Professional>> GetPagedProfessionals(ProfessionalFiltersDTO filters)
+        {
+            return await _unitOfWork.Professionals.GetPagedProfessionalsAsync(filters);
+        }
     }
 
     public interface IProfessionalService
@@ -88,5 +94,6 @@ namespace Services
         Task<Professional> CreateProfessional(CreateProfessionalRequest request);
         Task<Professional?> UpdateProfessional(int id, UpdateProfessionalRequest request);
         Task<bool> DeleteProfessional(int id);
+        Task<PagedResult<Professional>> GetPagedProfessionals(ProfessionalFiltersDTO filters);
     }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Core.DTO.Review;
-using Infrastructure.ServiceExtension;
-using Infrastructure.Repositories;
 using Core.Models;
+using Infrastructure.Repositories;
+using Infrastructure.ServiceExtension;
 
 namespace Services
 {
@@ -22,7 +22,9 @@ namespace Services
         private readonly IUnitOfWork _unitOfWork;
 
         public ReviewService(IUnitOfWork unitOfWork)
-            => _unitOfWork = unitOfWork;
+        {
+            _unitOfWork = unitOfWork;
+        }
 
         public Task<PagedResult<Review>> GetPagedAsync(ReviewFiltersDTO filters)
             => _unitOfWork.Reviews.GetPagedAsync(filters);
@@ -32,7 +34,7 @@ namespace Services
 
         public async Task<Review> CreateAsync(CreateReviewDTO dto)
         {
-            var model = new Review
+            var review = new Review
             {
                 CustomerId = dto.CustomerId,
                 CustomerName = dto.CustomerName,
@@ -49,65 +51,66 @@ namespace Services
                 ServiceType = dto.ServiceType,
                 Status = dto.Status,
                 Response = dto.Response,
+                ResponseDate = dto.ResponseDate,
                 CreatedDate = DateTime.UtcNow,
                 UpdatedDate = DateTime.UtcNow
             };
 
-            _unitOfWork.Reviews.Add(model);
+            _unitOfWork.Reviews.Add(review);
             await _unitOfWork.SaveAsync();
-            return model;
+            return review;
         }
 
         public async Task<Review?> UpdateAsync(int id, UpdateReviewDTO dto)
         {
-            var model = await _unitOfWork.Reviews.GetByIdAsync(id);
-            if (model == null) return null;
+            var review = await _unitOfWork.Reviews.GetByIdAsync(id);
+            if (review == null) return null;
 
-            if (!string.IsNullOrEmpty(dto.CustomerId)) model.CustomerId = dto.CustomerId;
-            if (!string.IsNullOrEmpty(dto.CustomerName)) model.CustomerName = dto.CustomerName;
-            if (!string.IsNullOrEmpty(dto.ProfessionalId)) model.ProfessionalId = dto.ProfessionalId;
-            if (!string.IsNullOrEmpty(dto.ProfessionalName)) model.ProfessionalName = dto.ProfessionalName;
-            if (!string.IsNullOrEmpty(dto.TeamId)) model.TeamId = dto.TeamId;
-            if (!string.IsNullOrEmpty(dto.TeamName)) model.TeamName = dto.TeamName;
-            if (!string.IsNullOrEmpty(dto.CompanyId)) model.CompanyId = dto.CompanyId;
-            if (!string.IsNullOrEmpty(dto.CompanyName)) model.CompanyName = dto.CompanyName;
-            if (!string.IsNullOrEmpty(dto.AppointmentId)) model.AppointmentId = dto.AppointmentId;
-            if (dto.Rating.HasValue) model.Rating = dto.Rating.Value;
-            if (!string.IsNullOrEmpty(dto.Comment)) model.Comment = dto.Comment;
-            if (dto.Date.HasValue) model.Date = dto.Date.Value;
-            if (!string.IsNullOrEmpty(dto.ServiceType)) model.ServiceType = dto.ServiceType;
-            if (dto.Status.HasValue) model.Status = dto.Status.Value;
-            if (!string.IsNullOrEmpty(dto.Response)) model.Response = dto.Response;
-            if (dto.ResponseDate.HasValue) model.ResponseDate = dto.ResponseDate.Value;
+            if (!string.IsNullOrEmpty(dto.CustomerId)) review.CustomerId = dto.CustomerId;
+            if (!string.IsNullOrEmpty(dto.CustomerName)) review.CustomerName = dto.CustomerName;
+            if (!string.IsNullOrEmpty(dto.ProfessionalId)) review.ProfessionalId = dto.ProfessionalId;
+            if (!string.IsNullOrEmpty(dto.ProfessionalName)) review.ProfessionalName = dto.ProfessionalName;
+            if (!string.IsNullOrEmpty(dto.TeamId)) review.TeamId = dto.TeamId;
+            if (!string.IsNullOrEmpty(dto.TeamName)) review.TeamName = dto.TeamName;
+            if (!string.IsNullOrEmpty(dto.CompanyId)) review.CompanyId = dto.CompanyId;
+            if (!string.IsNullOrEmpty(dto.CompanyName)) review.CompanyName = dto.CompanyName;
+            if (!string.IsNullOrEmpty(dto.AppointmentId)) review.AppointmentId = dto.AppointmentId;
+            if (dto.Rating.HasValue) review.Rating = dto.Rating.Value;
+            if (!string.IsNullOrEmpty(dto.Comment)) review.Comment = dto.Comment;
+            if (dto.Date.HasValue) review.Date = dto.Date.Value;
+            if (!string.IsNullOrEmpty(dto.ServiceType)) review.ServiceType = dto.ServiceType;
+            if (dto.Status.HasValue) review.Status = dto.Status.Value;
+            if (!string.IsNullOrEmpty(dto.Response)) review.Response = dto.Response;
+            if (dto.ResponseDate.HasValue) review.ResponseDate = dto.ResponseDate.Value;
 
-            model.UpdatedDate = DateTime.UtcNow;
-            _unitOfWork.Reviews.Update(model);
+            review.UpdatedDate = DateTime.UtcNow;
+            _unitOfWork.Reviews.Update(review);
             await _unitOfWork.SaveAsync();
-            return model;
+            return review;
         }
 
         public async Task<bool> DeleteAsync(int id)
         {
-            var model = await _unitOfWork.Reviews.GetByIdAsync(id);
-            if (model == null) return false;
+            var review = await _unitOfWork.Reviews.GetByIdAsync(id);
+            if (review == null) return false;
 
-            _unitOfWork.Reviews.Delete(model);
+            _unitOfWork.Reviews.Delete(review);
             await _unitOfWork.SaveAsync();
             return true;
         }
 
         public async Task<Review?> RespondAsync(int id, string response)
         {
-            var model = await _unitOfWork.Reviews.GetByIdAsync(id);
-            if (model == null) return null;
+            var review = await _unitOfWork.Reviews.GetByIdAsync(id);
+            if (review == null) return null;
 
-            model.Response = response;
-            model.ResponseDate = DateTime.UtcNow;
-            model.UpdatedDate = DateTime.UtcNow;
+            review.Response = response;
+            review.ResponseDate = DateTime.UtcNow;
+            review.UpdatedDate = DateTime.UtcNow;
 
-            _unitOfWork.Reviews.Update(model);
+            _unitOfWork.Reviews.Update(review);
             await _unitOfWork.SaveAsync();
-            return model;
+            return review;
         }
     }
 }

@@ -1,16 +1,15 @@
-﻿using Core.DTO;
+﻿using Microsoft.AspNetCore.Mvc;
 using Core.DTO.Company;
 using Core.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Services;
+using Core.Enums;
+using System.Linq;
 
-namespace API.Controllers
+namespace Api.Controllers
 {
-    [Authorize]
-    [Route("api/[controller]")]
     [ApiController]
-    public class CompaniesController : ControllerBase
+    [Route("api/[controller]")]
+    public class CompaniesController : ControllerBase // 🔥 nome plural aqui
     {
         private readonly ICompanyService _companyService;
 
@@ -19,8 +18,56 @@ namespace API.Controllers
             _companyService = companyService;
         }
 
-        [AllowAnonymous]
-        [HttpPost("create")]
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var companies = await _companyService.GetAllCompanies();
+            return Ok(companies);
+        }
+
+        [HttpGet("paged")]
+        public async Task<IActionResult> GetPaged([FromQuery] CompanyFiltersDTO filters)
+        {
+            var paged = await _companyService.GetCompaniesPagedFilteredAsync(filters);
+
+            var result = new CompanyPagedDTO
+            {
+                PageCount = paged.PageCount,
+                Result = paged.Results.Select(c => new CompanyDTO
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    Cnpj = c.Cnpj,
+                    Responsible = c.Responsible,
+                    Email = c.Email,
+                    Phone = c.Phone,
+                    PlanId = c.PlanId,
+                    PlanName = c.Plan?.Name,
+                    Status = c.Status,
+                    CreatedDate = c.CreatedDate,
+                    UpdatedDate = c.UpdatedDate
+                }).ToList()
+            };
+
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var company = await _companyService.GetCompanyById(id);
+            if (company == null) return NotFound("Company not found.");
+            return Ok(company);
+        }
+
+        [HttpGet("{companyId}/plan-id")]
+        public async Task<IActionResult> GetPlanIdByCompanyId(int companyId)
+        {
+            var planId = await _companyService.GetPlanIdByCompanyId(companyId);
+            return planId.HasValue ? Ok(planId.Value) : NotFound("Company not found.");
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateCompanyRequest request)
         {
             var company = new Company
@@ -31,59 +78,25 @@ namespace API.Controllers
                 Email = request.Email,
                 Phone = request.Phone,
                 PlanId = request.PlanId,
-                Status = request.Status,
-                CreatedDate = DateTime.UtcNow,
-                UpdatedDate = DateTime.UtcNow
+                Status = request.Status
             };
 
             var created = await _companyService.CreateCompany(company);
-            return created ? Ok(true) : BadRequest("Failed to create company");
+            return created ? Ok("Company created successfully.") : BadRequest("Error creating company.");
         }
 
-        [HttpGet("{companyId}")]
-        public async Task<IActionResult> GetById(int companyId)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] CreateCompanyRequest request)
         {
-            var company = await _companyService.GetCompanyById(companyId);
-            return company != null ? Ok(company) : NotFound("Company not found");
+            var updated = await _companyService.UpdateCompany(request, id);
+            return updated ? Ok("Company updated successfully.") : NotFound("Company not found.");
         }
 
-        [HttpGet("paged")]
-        public async Task<IActionResult> GetAllPaged([FromQuery] FiltersDTO filters)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
-            var result = await _companyService.GetAllCompaniesPaged(filters);
-
-            return Ok(new
-            {
-                data = result.Results,
-                meta = new
-                {
-                    currentPage = result.CurrentPage,
-                    totalPages = result.PageCount,
-                    totalItems = result.TotalItems,
-                    itemsPerPage = result.PageSize
-                }
-            });
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
-        {
-            var companies = await _companyService.GetAllCompanies();
-            return Ok(companies);
-        }
-
-        [HttpPut("{companyId}")]
-        public async Task<IActionResult> Update(int companyId, [FromBody] CreateCompanyRequest request)
-        {
-            var updated = await _companyService.UpdateCompany(request, companyId);
-            return updated ? Ok(true) : BadRequest("Failed to update company");
-        }
-
-        [HttpDelete("{companyId}")]
-        public async Task<IActionResult> Delete(int companyId)
-        {
-            var deleted = await _companyService.DeleteCompany(companyId);
-            return deleted ? Ok(true) : NotFound("Company not found");
+            var deleted = await _companyService.DeleteCompany(id);
+            return deleted ? Ok("Company deleted successfully.") : NotFound("Company not found.");
         }
     }
 }

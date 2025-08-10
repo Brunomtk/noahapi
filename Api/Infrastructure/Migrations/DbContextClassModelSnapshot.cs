@@ -481,9 +481,8 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("AssignedToId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("AssignedToId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Category")
                         .IsRequired()
@@ -506,9 +505,8 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ProfessionalId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("ProfessionalId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Status")
                         .HasColumnType("integer");
@@ -517,9 +515,8 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("TeamId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("TeamId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -1093,6 +1090,8 @@ namespace Infrastructure.Migrations
 
                     b.HasIndex("CompanyId");
 
+                    b.HasIndex("TeamId");
+
                     b.ToTable("Professionals", (string)null);
                 });
 
@@ -1570,7 +1569,13 @@ namespace Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Core.Models.Team", "Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId");
+
                     b.Navigation("Company");
+
+                    b.Navigation("Team");
                 });
 
             modelBuilder.Entity("Core.Models.Recurrence", b =>

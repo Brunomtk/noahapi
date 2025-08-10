@@ -1,5 +1,4 @@
-﻿// Api/Services/NotificationService.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,7 +33,6 @@ namespace Services
             var roleEnum = Enum.Parse<UserRole>(dto.RecipientRole, ignoreCase: true);
             var defaultStatus = NotificationStatus.Unread;
 
-            // CompanyId agora é int?
             var companyId = dto.CompanyId ?? 0;
 
             if (dto.IsBroadcast)
@@ -44,7 +42,7 @@ namespace Services
                     Title = dto.Title,
                     Message = dto.Message,
                     Type = typeEnum,
-                    RecipientId = 0,           // broadcast marcado como 0
+                    RecipientId = 0,
                     RecipientRole = roleEnum,
                     CompanyId = companyId,
                     Status = defaultStatus,
@@ -55,7 +53,6 @@ namespace Services
             }
             else
             {
-                // RecipientIds agora é List<int>?
                 var recipientIds = dto.RecipientIds ?? new List<int>();
                 foreach (var rid in recipientIds)
                 {
@@ -127,29 +124,32 @@ namespace Services
         public async Task<List<Notification>> GetUserNotificationsAsync(string userId)
         {
             var uid = int.Parse(userId);
-            var all = await _unitOfWork.Notifications.GetAsync(new NotificationFiltersDTO());
+            var filters = new NotificationFiltersDTO { RecipientId = uid };
+            var all = await _unitOfWork.Notifications.GetAsync(filters);
+
             return all
-                .Where(n => n.RecipientId == uid || n.RecipientId == 0)  // 0 == broadcast
+                .Where(n => n.RecipientId == uid || n.RecipientId == 0)
                 .ToList();
         }
 
         public async Task<int> GetUnreadCountAsync(string userId)
         {
             var uid = int.Parse(userId);
-            var all = await _unitOfWork.Notifications.GetAsync(new NotificationFiltersDTO());
+            var filters = new NotificationFiltersDTO { RecipientId = uid };
+            var all = await _unitOfWork.Notifications.GetAsync(filters);
             return all.Count(n => n.RecipientId == uid && n.Status == NotificationStatus.Unread);
         }
     }
-}
 
-public interface INotificationService
-{
-    Task<List<Notification>> GetAsync(NotificationFiltersDTO filters);
-    Task<Notification?> GetByIdAsync(int id);
-    Task<List<Notification>> CreateAsync(CreateNotificationDTO dto);
-    Task<Notification?> UpdateAsync(int id, UpdateNotificationDTO dto);
-    Task<bool> DeleteAsync(int id);
-    Task<Notification?> MarkAsReadAsync(int id);
-    Task<List<Notification>> GetUserNotificationsAsync(string userId);
-    Task<int> GetUnreadCountAsync(string userId);
+    public interface INotificationService
+    {
+        Task<List<Notification>> GetAsync(NotificationFiltersDTO filters);
+        Task<Notification?> GetByIdAsync(int id);
+        Task<List<Notification>> CreateAsync(CreateNotificationDTO dto);
+        Task<Notification?> UpdateAsync(int id, UpdateNotificationDTO dto);
+        Task<bool> DeleteAsync(int id);
+        Task<Notification?> MarkAsReadAsync(int id);
+        Task<List<Notification>> GetUserNotificationsAsync(string userId);
+        Task<int> GetUnreadCountAsync(string userId);
+    }
 }

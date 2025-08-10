@@ -25,6 +25,6 @@ namespace Core.Models
 
         // ✅ Propriedades de navegação
         public Company Company { get; set; } = null!;
-        //public Team? Team { get; set; }
+        public Team? Team { get; set; }
     }
 }

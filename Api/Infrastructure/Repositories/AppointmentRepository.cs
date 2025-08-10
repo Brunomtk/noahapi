@@ -1,4 +1,5 @@
-﻿using Core.Enums.Appointment;
+﻿using Core.DTO.Appointment;
+using Core.Enums.Appointment;
 using Core.Models;
 using Infrastructure.ServiceExtension;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +10,7 @@ namespace Infrastructure.Repositories
     {
         public AppointmentRepository(DbContextClass context) : base(context) { }
 
-        public async Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(int page, int pageSize, AppointmentStatus? status = null, string? search = null)
+        public async Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(AppointmentFiltersDTO filters)
         {
             var query = _dbContext.Set<Appointment>()
                 .Include(a => a.Company)
@@ -18,15 +19,39 @@ namespace Infrastructure.Repositories
                 .Include(a => a.Professional)
                 .AsQueryable();
 
-            if (status.HasValue)
-                query = query.Where(a => a.Status == status.Value);
+            // Filtros dinâmicos
+            if (filters.CompanyId.HasValue)
+                query = query.Where(a => a.CompanyId == filters.CompanyId.Value);
 
-            if (!string.IsNullOrWhiteSpace(search))
-                query = query.Where(a => a.Title.ToLower().Contains(search.ToLower()));
+            if (filters.CustomerId.HasValue)
+                query = query.Where(a => a.CustomerId == filters.CustomerId.Value);
 
-            return await query
-                .OrderByDescending(a => a.Start)
-                .GetPagedAsync(page, pageSize);
+            if (filters.TeamId.HasValue)
+                query = query.Where(a => a.TeamId == filters.TeamId.Value);
+
+            if (filters.ProfessionalId.HasValue)
+                query = query.Where(a => a.ProfessionalId == filters.ProfessionalId.Value);
+
+            if (filters.Status.HasValue)
+                query = query.Where(a => a.Status == filters.Status.Value);
+
+            if (filters.Type.HasValue)
+                query = query.Where(a => a.Type == filters.Type.Value);
+
+            if (!string.IsNullOrWhiteSpace(filters.Search))
+                query = query.Where(a =>
+                    a.Title.ToLower().Contains(filters.Search.ToLower()) ||
+                    a.Address.ToLower().Contains(filters.Search.ToLower()));
+
+            if (filters.StartDate.HasValue)
+                query = query.Where(a => a.Start >= filters.StartDate.Value);
+
+            if (filters.EndDate.HasValue)
+                query = query.Where(a => a.End <= filters.EndDate.Value);
+
+            query = query.OrderByDescending(a => a.Start);
+
+            return await query.GetPagedAsync(filters.Page, filters.PageSize);
         }
 
         public async Task<List<Appointment>> GetAppointmentsByCompanyAsync(int companyId)
@@ -87,7 +112,7 @@ namespace Infrastructure.Repositories
 
     public interface IAppointmentRepository : IGenericRepository<Appointment>
     {
-        Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(int page, int pageSize, AppointmentStatus? status = null, string? search = null);
+        Task<PagedResult<Appointment>> GetPagedAppointmentsAsync(AppointmentFiltersDTO filters);
         Task<List<Appointment>> GetAppointmentsByCompanyAsync(int companyId);
         Task<List<Appointment>> GetAppointmentsByTeamAsync(int teamId);
         Task<List<Appointment>> GetAppointmentsByProfessionalAsync(int professionalId);

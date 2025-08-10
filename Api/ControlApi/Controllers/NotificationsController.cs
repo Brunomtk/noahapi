@@ -18,7 +18,7 @@ namespace ControlApi.Controllers
             _service = service;
         }
 
-        // GET: api/notifications?type=&recipientRole=&search=
+        // GET: api/notifications?type=&recipientRole=&search=&recipientId=&companyId=
         [HttpGet]
         public async Task<ActionResult<List<Notification>>> Get([FromQuery] NotificationFiltersDTO filters)
         {
@@ -40,7 +40,6 @@ namespace ControlApi.Controllers
         public async Task<ActionResult<List<Notification>>> Create(CreateNotificationDTO dto)
         {
             var created = await _service.CreateAsync(dto);
-            // Return the first one in location header, if there is one
             var firstId = created.Count > 0 ? created[0].Id : 0;
             return CreatedAtAction(nameof(GetById), new { id = firstId }, created);
         }

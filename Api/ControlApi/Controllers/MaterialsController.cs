@@ -20,20 +20,22 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Retrieves a paged list of materials matching the specified filters.
+        /// Lista materiais com paginação e filtros.
         /// </summary>
-        /// <param name="filters">Filtering and paging parameters</param>
+        /// <param name="filters">Filtros da listagem (inclui CompanyId)</param>
         [HttpGet]
         public async Task<ActionResult<PagedResult<Material>>> Get([FromQuery] MaterialFiltersDto filters)
         {
+            if (filters.CompanyId <= 0)
+                return BadRequest("É necessário informar um CompanyId válido.");
+
             var pageResult = await _service.GetPagedAsync(filters);
             return Ok(pageResult);
         }
 
         /// <summary>
-        /// Retrieves a single material by its ID.
+        /// Retorna um material pelo ID.
         /// </summary>
-        /// <param name="id">Material ID</param>
         [HttpGet("{id}")]
         public async Task<ActionResult<Material>> GetById(int id)
         {
@@ -43,9 +45,8 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Creates a new material.
+        /// Cria um novo material.
         /// </summary>
-        /// <param name="dto">Data for the new material</param>
         [HttpPost]
         public async Task<ActionResult<Material>> Create([FromBody] CreateMaterialDto dto)
         {
@@ -54,10 +55,8 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Updates an existing material.
+        /// Atualiza um material existente.
         /// </summary>
-        /// <param name="id">Material ID</param>
-        /// <param name="dto">Updated data</param>
         [HttpPut("{id}")]
         public async Task<ActionResult<Material>> Update(int id, [FromBody] UpdateMaterialDto dto)
         {
@@ -67,9 +66,8 @@ namespace ControlApi.Controllers
         }
 
         /// <summary>
-        /// Deletes a material by its ID.
+        /// Exclui um material.
         /// </summary>
-        /// <param name="id">Material ID</param>
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {

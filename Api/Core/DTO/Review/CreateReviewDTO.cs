@@ -1,5 +1,4 @@
-﻿// Core/DTO/Review/CreateReviewDTO.cs
-using System;
+﻿using System;
 using Core.Enums;
 
 namespace Core.DTO.Review
@@ -23,12 +22,13 @@ namespace Core.DTO.Review
         public int Rating { get; set; }
         public string? Comment { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime Date { get; set; } = DateTime.UtcNow;
 
         public string ServiceType { get; set; } = string.Empty;
 
         public ReviewStatus Status { get; set; } = ReviewStatus.Pending;
 
         public string? Response { get; set; }
+        public DateTime? ResponseDate { get; set; }
     }
 }
