@@ -151,6 +151,11 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
       }
     },
     "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj": {
@@ -326,6 +331,11 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
+        }
       }
     },
     "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj": {
@@ -493,6 +503,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }

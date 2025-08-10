@@ -63,10 +63,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Control.API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "MaidsFlow.API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "JWT Authorization header using Bearer scheme",
+        Description = "Joga o token na frente do Bearer {token} ",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
@@ -99,6 +99,22 @@ builder.Host.UseSerilog((context, loggerConfig) =>
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
 });
 
+// Configuração CORS com IP adicional
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins", policy =>
+    {
+        policy.WithOrigins(
+            "http://localhost:3000",
+            "http://localhost:3001",
+            "http://174.138.37.104"
+        )
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
+    });
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -109,7 +125,9 @@ if (app.Environment.IsDevelopment())
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
-app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+// Uso da policy configurada
+app.UseCors("AllowSpecificOrigins");
+
 app.MigrateDatabase();
 app.UseSerilogRequestLogging(options =>
 {

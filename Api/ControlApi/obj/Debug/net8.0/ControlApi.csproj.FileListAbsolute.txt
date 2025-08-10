@@ -146,7 +146,6 @@ C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\C
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.csproj.Up2Date
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.dll
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\refint\ControlApi.dll
