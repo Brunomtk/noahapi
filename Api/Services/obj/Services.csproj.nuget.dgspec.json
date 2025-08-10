@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj": {}
+    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Core\\Core.csproj": {
+    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Core\\obj\\",
+        "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -151,21 +151,16 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
-        }
       }
     },
-    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -186,8 +181,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Core\\Core.csproj"
+              "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Core\\Core.csproj"
               }
             }
           }
@@ -331,21 +326,16 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
-        }
       }
     },
-    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj": {
+    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\obj\\",
+        "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -366,11 +356,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Core\\Core.csproj"
+              "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Core\\Core.csproj"
               },
-              "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\noahapi\\Api\\Infrastructure\\Infrastructure.csproj"
               }
             }
           }
@@ -503,11 +493,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "linux-x64": {
-          "#import": []
         }
       }
     }
