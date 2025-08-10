@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "MaidsFlow.API",
+    "title": "Control.API",
     "version": "v1"
   },
   "paths": {
@@ -7715,7 +7715,7 @@
     "securitySchemes": {
       "Bearer": {
         "type": "apiKey",
-        "description": "Joga o token na frente do Bearer {token} ",
+        "description": "JWT Authorization header using the Bearer scheme. Ex: \"Bearer {token}\"",
         "name": "Authorization",
         "in": "header"
       }

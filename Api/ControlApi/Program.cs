@@ -9,16 +9,15 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Exceptions;
 using Services;
-using System;
-using System.Collections.Generic;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Register DbContext, repositories and services
+// -----------------------------
+// DI: Repositórios/Serviços + Db (feito dentro de AddDIServices)
+// -----------------------------
 builder.Services.AddDIServices(builder.Configuration);
 
-// Domain service registrations
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IPlanService, PlanService>();
@@ -39,7 +38,9 @@ builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<IMaterialService, MaterialService>();
 builder.Services.AddScoped<IInternalReportService, InternalReportService>();
 
-// JWT authentication configuration
+// -----------------------------
+// JWT
+// -----------------------------
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -51,22 +52,31 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true,
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+            ),
             ClockSkew = TimeSpan.Zero
         };
     });
 
 builder.Services.AddSingleton<IJWTManager, JWTManager>();
 
-// Controllers and Swagger
-builder.Services.AddControllers();
+// -----------------------------
+// Controllers / JSON
+// -----------------------------
+builder.Services.AddControllers()
+    .AddJsonOptions(o => o.JsonSerializerOptions.PropertyNameCaseInsensitive = true);
+
+// -----------------------------
+// Swagger (com JWT)
+// -----------------------------
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "MaidsFlow.API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Control.API", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Description = "Joga o token na frente do Bearer {token} ",
+        Description = "JWT Authorization header using the Bearer scheme. Ex: \"Bearer {token}\"",
         Name = "Authorization",
         In = ParameterLocation.Header,
         Type = SecuritySchemeType.ApiKey,
@@ -87,7 +97,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Serilog configuration
+// -----------------------------
+// Serilog
+// -----------------------------
 builder.Host.UseSerilog((context, loggerConfig) =>
 {
     loggerConfig
@@ -99,25 +111,30 @@ builder.Host.UseSerilog((context, loggerConfig) =>
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}");
 });
 
-// Configuração CORS com IP adicional
+// -----------------------------
+// CORS
+// -----------------------------
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigins", policy =>
     {
         policy.WithOrigins(
-            "http://localhost:3000",
-            "http://localhost:3001",
-            "http://206.189.191.51"
-        )
-        .AllowAnyMethod()
-        .AllowAnyHeader()
-        .AllowCredentials();
+                "http://localhost:3000",
+                "http://localhost:3001",
+                "https://206.189.191.51"
+            )
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials();
     });
 });
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+// -----------------------------
+// Pipeline
+// -----------------------------
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
@@ -125,10 +142,9 @@ if (app.Environment.IsDevelopment())
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
-// Uso da policy configurada
 app.UseCors("AllowSpecificOrigins");
+app.UseHttpsRedirection();
 
-app.MigrateDatabase();
 app.UseSerilogRequestLogging(options =>
 {
     options.GetLevel = (httpContext, elapsed, ex) =>
@@ -138,8 +154,14 @@ app.UseSerilogRequestLogging(options =>
         return LogEventLevel.Information;
     };
 });
+
 app.UseMiddleware<ExceptionHandlingMiddleware>();
+
 app.UseAuthentication();
 app.UseAuthorization();
+
+// 🔹 Aplica migrações usando sua extensão (que já resolve o DbContext certo)
+app.MigrateDatabase();
+
 app.MapControllers();
 app.Run();
