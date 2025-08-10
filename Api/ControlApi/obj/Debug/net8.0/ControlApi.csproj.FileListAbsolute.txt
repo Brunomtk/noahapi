@@ -152,3 +152,4 @@ C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\C
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.pdb
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ControlApi.genruntimeconfig.cache
 C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\ref\ControlApi.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\Projetos B7\Noah\noahapi\noahapi\Api\ControlApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

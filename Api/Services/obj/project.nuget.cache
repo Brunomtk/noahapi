@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rXxTNxkgbbA=",
+  "dgSpecHash": "6OFdG1lryHs=",
   "success": true,
   "projectFilePath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj",
   "expectedPackageFiles": [
@@ -77,23 +77,6 @@
     "C:\\Users\\bruno\\.nuget\\packages\\pdfiumviewer\\2.13.0\\pdfiumviewer.2.13.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\pdflibcore\\2.5.0\\pdflibcore.2.5.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\pdfsharp\\6.1.0\\pdfsharp.6.1.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.3.0\\runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.diagnostics.tracing\\4.3.0\\runtime.any.system.diagnostics.tracing.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.globalization\\4.3.0\\runtime.any.system.globalization.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.globalization.calendars\\4.3.0\\runtime.any.system.globalization.calendars.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.io\\4.3.0\\runtime.any.system.io.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.reflection\\4.3.0\\runtime.any.system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.reflection.extensions\\4.3.0\\runtime.any.system.reflection.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.reflection.primitives\\4.3.0\\runtime.any.system.reflection.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.resources.resourcemanager\\4.3.0\\runtime.any.system.resources.resourcemanager.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.runtime\\4.3.0\\runtime.any.system.runtime.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.runtime.handles\\4.3.0\\runtime.any.system.runtime.handles.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.runtime.interopservices\\4.3.0\\runtime.any.system.runtime.interopservices.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.text.encoding\\4.3.0\\runtime.any.system.text.encoding.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.text.encoding.extensions\\4.3.0\\runtime.any.system.text.encoding.extensions.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.threading.tasks\\4.3.0\\runtime.any.system.threading.tasks.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.any.system.threading.timer\\4.3.0\\runtime.any.system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
@@ -110,14 +93,6 @@
     "C:\\Users\\bruno\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.unix.microsoft.win32.primitives\\4.3.0\\runtime.unix.microsoft.win32.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.unix.system.console\\4.3.1\\runtime.unix.system.console.4.3.1.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.unix.system.diagnostics.debug\\4.3.0\\runtime.unix.system.diagnostics.debug.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.unix.system.io.filesystem\\4.3.0\\runtime.unix.system.io.filesystem.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.unix.system.net.primitives\\4.3.0\\runtime.unix.system.net.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.unix.system.net.sockets\\4.3.0\\runtime.unix.system.net.sockets.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.unix.system.private.uri\\4.3.0\\runtime.unix.system.private.uri.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\runtime.unix.system.runtime.extensions\\4.3.0\\runtime.unix.system.runtime.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\serilog\\2.10.0\\serilog.2.10.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\serilog.aspnetcore\\5.0.0\\serilog.aspnetcore.5.0.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\serilog.enrichers.environment\\2.2.0\\serilog.enrichers.environment.2.2.0.nupkg.sha512",
@@ -167,11 +142,9 @@
     "C:\\Users\\bruno\\.nuget\\packages\\system.linq.expressions\\4.3.0\\system.linq.expressions.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\system.net.nameresolution\\4.3.0\\system.net.nameresolution.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.net.sockets\\4.3.0\\system.net.sockets.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.objectmodel\\4.3.0\\system.objectmodel.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
@@ -189,7 +162,6 @@
     "C:\\Users\\bruno\\.nuget\\packages\\system.runtime.numerics\\4.3.0\\system.runtime.numerics.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.runtime.serialization.formatters\\4.3.0\\system.runtime.serialization.formatters.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.runtime.serialization.primitives\\4.3.0\\system.runtime.serialization.primitives.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\system.security.claims\\4.3.0\\system.security.claims.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.security.cryptography.algorithms\\4.3.0\\system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.security.cryptography.csp\\4.3.0\\system.security.cryptography.csp.4.3.0.nupkg.sha512",
@@ -198,8 +170,6 @@
     "C:\\Users\\bruno\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.0\\system.security.cryptography.pkcs.8.0.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.security.cryptography.primitives\\4.3.0\\system.security.cryptography.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.security.cryptography.x509certificates\\4.3.0\\system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\system.security.principal\\4.3.0\\system.security.principal.4.3.0.nupkg.sha512",
-    "C:\\Users\\bruno\\.nuget\\packages\\system.security.principal.windows\\4.3.0\\system.security.principal.windows.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.text.encoding.codepages\\8.0.0\\system.text.encoding.codepages.8.0.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
@@ -229,8 +199,7 @@
       "filePath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj",
       "libraryId": "BouncyCastle",
       "targetGraphs": [
-        "net8.0",
-        "net8.0/linux-x64"
+        "net8.0"
       ]
     },
     {
@@ -242,8 +211,7 @@
       "filePath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj",
       "libraryId": "BouncyCastle",
       "targetGraphs": [
-        "net8.0",
-        "net8.0/linux-x64"
+        "net8.0"
       ]
     },
     {
@@ -255,8 +223,7 @@
       "filePath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Projetos B7\\Noah\\noahapi\\noahapi\\Api\\Services\\Services.csproj",
       "libraryId": "BouncyCastle",
       "targetGraphs": [
-        "net8.0",
-        "net8.0/linux-x64"
+        "net8.0"
       ]
     },
     {
